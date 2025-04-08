@@ -65,6 +65,20 @@ CHAT_MODEL_ARGS_DICT = {
         max_new_tokens=16_384,
         vision_support=True,
     ),
+    "openai/o1-2024-12-17": OpenAIModelArgs(
+        model_name="o1-2024-12-17",
+        max_total_tokens=128_000,
+        max_input_tokens=128_000,
+        max_new_tokens=64_000,
+        temperature=1e-1,
+    ),
+    "google/gemini-2.0-flash": OpenAIModelArgs(
+        model_name="gemini-2.0-flash",
+        max_total_tokens=128_000,
+        max_input_tokens=128_000,
+        max_new_tokens=64_000,
+        temperature=1e-1,
+    ),
     "azure/gpt-35-turbo/gpt-35-turbo": AzureModelArgs(
         model_name="gpt-35-turbo",
         deployment_name="gpt-35-turbo",
