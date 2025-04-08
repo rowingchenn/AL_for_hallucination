@@ -7,7 +7,6 @@ a few configurations that can be used to run it on different environments.
 """
 
 from .agent_configs import (
-    AGENT_3_5,
     AGENT_8B,
     AGENT_CUSTOM,
     AGENT_LLAMA3_70B,

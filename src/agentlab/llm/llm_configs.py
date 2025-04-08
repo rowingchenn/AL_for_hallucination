@@ -51,24 +51,19 @@ CHAT_MODEL_ARGS_DICT = {
         max_new_tokens=4_096,  # I think this model has very small default value if we don't set max_new_tokens
         vision_support=True,
     ),
-    "openai/gpt-3.5-turbo-0125": OpenAIModelArgs(
-        model_name="gpt-3.5-turbo-0125",
-        max_total_tokens=16_384,
-        max_input_tokens=16_384,
-        max_new_tokens=4096,
-    ),
-    "openai/gpt-3.5-turbo-1106": OpenAIModelArgs(
-        model_name="gpt-3.5-turbo-1106",
-        max_total_tokens=16_384,
-        max_input_tokens=16_384,
-        max_new_tokens=4096,
-    ),
     "openai/o1-mini": OpenAIModelArgs(
         model_name="openai/o1-mini",
         max_total_tokens=128_000,
         max_input_tokens=128_000,
         max_new_tokens=64_000,
         temperature=1e-1,
+    ),
+    "openai/gpt-4o-2024-11-20": OpenAIModelArgs(
+        model_name="gpt-4o-2024-11-20",
+        max_total_tokens=128_000,
+        max_input_tokens=128_000,
+        max_new_tokens=16_384,
+        vision_support=True,
     ),
     "azure/gpt-35-turbo/gpt-35-turbo": AzureModelArgs(
         model_name="gpt-35-turbo",

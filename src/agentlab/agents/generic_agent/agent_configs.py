@@ -100,11 +100,6 @@ FLAGS_GPT_3_5 = GenericPromptFlags(
 )
 
 
-AGENT_3_5 = GenericAgentArgs(
-    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-3.5-turbo-1106"],
-    flags=FLAGS_GPT_3_5,
-)
-
 # llama3-70b default config
 FLAGS_LLAMA3_70B = GenericPromptFlags(
     obs=dp.ObsFlags(

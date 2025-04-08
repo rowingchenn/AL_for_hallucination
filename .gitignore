@@ -168,3 +168,6 @@ results/
 
 # gradio
 .gradio/
+
+# test_results
+src/agentlab/agents/test_results/

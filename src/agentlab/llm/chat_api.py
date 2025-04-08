@@ -340,7 +340,8 @@ class OpenAIChatModel(ChatModel):
     def __init__(
         self,
         model_name,
-        api_key=None,
+        api_key=os.getenv("OPENAI_API_KEY"),
+        base_url=os.getenv("OPENAI_API_BASE"),
         temperature=0.5,
         max_tokens=100,
         max_retry=4,
@@ -358,6 +359,7 @@ class OpenAIChatModel(ChatModel):
             client_class=OpenAI,
             pricing_func=tracking.get_pricing_openai,
             log_probs=log_probs,
+            client_args={"base_url": base_url},
         )
 
 
