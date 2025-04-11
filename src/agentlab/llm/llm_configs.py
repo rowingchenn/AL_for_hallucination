@@ -72,6 +72,13 @@ CHAT_MODEL_ARGS_DICT = {
         max_new_tokens=64_000,
         temperature=1e-1,
     ),
+    "openai/o1-mini-2024-09-12": OpenAIModelArgs(
+        model_name="o1-mini-2024-09-12",
+        max_total_tokens=128_000,
+        max_input_tokens=128_000,
+        max_new_tokens=64_000,
+        temperature=1e-1,
+    ),
     "google/gemini-2.0-flash": OpenAIModelArgs(
         model_name="gemini-2.0-flash",
         max_total_tokens=128_000,
