@@ -43,7 +43,7 @@ FLAGS_TEST = GenericPromptFlags(
             subsets=["bid"],
             multiaction=False,
         ),
-        long_description=False,
+        long_description=True,
         individual_examples=True,
     ),
     use_plan=False,
@@ -63,8 +63,8 @@ FLAGS_TEST = GenericPromptFlags(
 AGENT_TEST = GenericAgentArgs(
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
-    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
-    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["google/gemini-2.0-flash"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-mini-2024-09-12"],
@@ -87,8 +87,8 @@ def main():
         # "webarena.2",
         # "assistantbench.validation.1",
         # "workarena.servicenow.infeasible-navigate-and-create-user-l2",
-        # "workarena.servicenow.infeasible-navigate-and-create-incident-l2",
-        # "workarena.servicenow.infeasible-navigate-and-create-change-request-l2",
+        "workarena.servicenow.infeasible-navigate-and-create-incident-l2",
+        "workarena.servicenow.infeasible-navigate-and-create-change-request-l2",
         "workarena.servicenow.infeasible-navigate-and-create-problem-l2",
         "workarena.servicenow.infeasible-navigate-and-create-hardware-asset-l2",
         "workarena.servicenow.infeasible-navigate-and-order-standard-laptop-l2",
@@ -138,7 +138,7 @@ def main():
             ExpArgs(
                 agent_args=AGENT_TEST,
                 env_args=env_args,
-                logging_level=logging.DEBUG,
+                logging_level=logging.INFO,
             )
         )
 
