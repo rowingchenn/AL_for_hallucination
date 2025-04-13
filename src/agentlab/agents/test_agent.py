@@ -63,8 +63,8 @@ FLAGS_TEST = GenericPromptFlags(
 AGENT_TEST = GenericAgentArgs(
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
-    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
-    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["google/gemini-2.0-flash"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-mini-2024-09-12"],
@@ -144,8 +144,8 @@ def main():
 
     for exp_args in tqdm(exp_args_list):
         benchmark = bgym.DEFAULT_BENCHMARKS[
-            "workarena_l2_agent_curriculum_eval"
-            # "webarena"
+            # "workarena_l2_agent_curriculum_eval"
+            "webarena"
         ]()  # 如果跑 WebArena 的 benchmark 需要换成 bgym.DEFAULT_BENCHMARKS["webarena"]()
         # benchmark = bgym.DEFAULT_BENCHMARKS["assistantbench"]()
         exp_args.agent_args.set_benchmark(
