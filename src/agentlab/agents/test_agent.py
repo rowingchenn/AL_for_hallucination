@@ -127,7 +127,8 @@ def main():
         # "webarena.6",
         # "webarena.7",
         #"webarena.11",
-        "webarena.16",
+        #"webarena.16",
+        "webarena.6.5",
         # "webarena.17",
     ]
 
