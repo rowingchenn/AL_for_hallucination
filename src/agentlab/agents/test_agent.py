@@ -18,15 +18,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-os.environ["WA_SHOPPING"] = "http://111.229.174.217:18082"
-os.environ["WA_SHOPPING_ADMIN"] = "http://111.229.174.217:18083/admin"
-os.environ["WA_REDDIT"] = "http://111.229.174.217:19002"
-os.environ["WA_GITLAB"] = "http://111.229.174.217:19001"
-os.environ["WA_WIKIPEDIA"] = "http://111.229.174.217:19003"
-os.environ["WA_MAP"] = "http://111.229.174.217:18084"
-os.environ["WA_HOMEPAGE"] = "http://111.229.174.217:18081"
-#os.environ["WA_FULL_RESET"] = "http://111.229.174.217:17565" # /satus 访问不了，因此暂时跳过
-os.environ["WA_FULL_RESET"] = ""
 
 FLAGS_TEST = GenericPromptFlags(
     obs=dp.ObsFlags(
@@ -106,6 +97,7 @@ def main():
         # "workarena.servicenow.infeasible-navigate-and-order-ipad-pro-l2",
         # "workarena.servicenow.infeasible-navigate-and-order-ipad-mini-l2",
         # "workarena.servicenow.infeasible-navigate-and-order-apple-watch-l2",
+<<<<<<< HEAD
         # "workarena.servicenow.infeasible-navigate-and-order-apple-mac-book-pro15-l2",
         # "workarena.servicenow.infeasible-navigate-and-order-development-laptop-p-c-l2",
         # "workarena.servicenow.infeasible-navigate-and-order-loaner-laptop-l2",
@@ -130,6 +122,23 @@ def main():
         #"webarena.16",
         "webarena.6.5",
         # "webarena.17",
+=======
+        "workarena.servicenow.infeasible-navigate-and-order-apple-mac-book-pro15-l2",
+        "workarena.servicenow.infeasible-navigate-and-order-development-laptop-p-c-l2",
+        "workarena.servicenow.infeasible-navigate-and-order-loaner-laptop-l2",
+        "workarena.servicenow.infeasible-navigate-and-filter-asset-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-filter-user-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-filter-incident-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-filter-change-request-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-filter-hardware-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-sort-asset-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-sort-user-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-sort-incident-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-sort-change-request-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-sort-hardware-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-sort-service-catalog-item-list-l2",
+>>>>>>> 0c62892d31b5e42fdf4b3cfa742adf81be6e2689
     ]
 
     # 初始化空的实验参数列表
