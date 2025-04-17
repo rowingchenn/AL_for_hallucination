@@ -590,6 +590,7 @@ click('a324')
 Note: This action set allows you to interact with your environment. Most of them
 are python function executing playwright code. The primary way of referring to
 elements in the page is through bid which are specified in your observations.
+Remember to output your actions in <action></action> tags.
 
 """
         action_description = action_set.describe(
@@ -665,7 +666,7 @@ elements in the page is through bid which are specified in your observations.
 
 
 class Think(PromptElement):
-    _prompt = ""
+    _prompt = "Think step by step. Put your thoughts in <think></think> tags."
 
     _abstract_ex = """
 <think>
