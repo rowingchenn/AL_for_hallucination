@@ -286,14 +286,26 @@ class ChatModel(AbstractChatModel):
             self.retries += 1
             temperature = temperature if temperature is not None else self.temperature
             try:
-                completion = self.client.chat.completions.create(
-                    model=self.model_name,
-                    messages=messages,
-                    n=n_samples,
-                    temperature=temperature,
-                    max_tokens=self.max_tokens,
-                    logprobs=self.log_probs,
-                )
+                if (
+                    "o4" in self.model_name
+                ):  # o4-mini-2025-04-16 use max_completion_tokens instead of max_tokens
+                    completion = self.client.chat.completions.create(
+                        model=self.model_name,
+                        messages=messages,
+                        n=n_samples,
+                        temperature=1,  # only temperature=1 is supported for o4
+                        max_completion_tokens=self.max_tokens,
+                        logprobs=self.log_probs,
+                    )
+                else:
+                    completion = self.client.chat.completions.create(
+                        model=self.model_name,
+                        messages=messages,
+                        n=n_samples,
+                        temperature=temperature,
+                        max_tokens=self.max_tokens,
+                        logprobs=self.log_probs,
+                    )
 
                 if completion.usage is None:
                     raise OpenRouterError(

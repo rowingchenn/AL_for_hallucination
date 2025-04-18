@@ -17,6 +17,13 @@ CLOSED_SOURCE_APIS = [
 ]
 
 CHAT_MODEL_ARGS_DICT = {
+    "openai/o4-mini-2025-04-16": OpenAIModelArgs(
+        model_name="o4-mini-2025-04-16",
+        max_total_tokens=200_000,
+        max_input_tokens=200_000,
+        max_new_tokens=100_000,
+        vision_support=False,
+    ),
     "openai/o3-mini-2025-01-31": OpenAIModelArgs(
         model_name="o3-mini-2025-01-31",
         max_total_tokens=200_000,
