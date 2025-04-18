@@ -33,8 +33,8 @@ FLAGS_TEST = GenericPromptFlags(
         html_type="pruned_html",
         use_screenshot=False,
         use_som=False,
-        extract_visible_tag=True,
-        extract_clickable_tag=False,
+        extract_visible_tag=False,
+        extract_clickable_tag=True,
         extract_coords="False",
         filter_visible_elements_only=False,
     ),
@@ -63,8 +63,8 @@ FLAGS_TEST = GenericPromptFlags(
 AGENT_TEST = GenericAgentArgs(
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
-    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
-    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["google/gemini-2.0-flash"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-mini-2024-09-12"],
@@ -97,21 +97,22 @@ def main():
         # "workarena.servicenow.infeasible-navigate-and-order-ipad-pro-l2",
         # "workarena.servicenow.infeasible-navigate-and-order-ipad-mini-l2",
         # "workarena.servicenow.infeasible-navigate-and-order-apple-watch-l2",
-        "workarena.servicenow.infeasible-navigate-and-order-apple-mac-book-pro15-l2",
-        "workarena.servicenow.infeasible-navigate-and-order-development-laptop-p-c-l2",
-        "workarena.servicenow.infeasible-navigate-and-order-loaner-laptop-l2",
-        "workarena.servicenow.infeasible-navigate-and-filter-asset-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-filter-user-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-filter-incident-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-filter-change-request-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-filter-hardware-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-sort-asset-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-sort-user-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-sort-incident-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-sort-change-request-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-sort-hardware-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-sort-service-catalog-item-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-order-apple-mac-book-pro15-l2",
+        # "workarena.servicenow.infeasible-navigate-and-order-development-laptop-p-c-l2",
+        # "workarena.servicenow.infeasible-navigate-and-order-loaner-laptop-l2",
+        # "workarena.servicenow.infeasible-navigate-and-filter-asset-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-filter-user-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-filter-incident-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-filter-change-request-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-filter-hardware-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-sort-asset-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-sort-user-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-sort-incident-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-sort-change-request-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-sort-hardware-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-sort-service-catalog-item-list-l2",
+        "openended",
     ]
 
     # 初始化空的实验参数列表
@@ -144,8 +145,8 @@ def main():
 
     for exp_args in tqdm(exp_args_list):
         benchmark = bgym.DEFAULT_BENCHMARKS[
-            # "workarena_l2_agent_curriculum_eval"
-            "webarena"
+            "workarena_l2_agent_curriculum_eval"
+            # "webarena"
         ]()  # 如果跑 WebArena 的 benchmark 需要换成 bgym.DEFAULT_BENCHMARKS["webarena"]()
         # benchmark = bgym.DEFAULT_BENCHMARKS["assistantbench"]()
         exp_args.agent_args.set_benchmark(
