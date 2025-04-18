@@ -15,8 +15,8 @@ def delete_info_json_files(directory):
     """
     count = 0
     for root, dirs, files in os.walk(directory):
-        if "infeasible_info.json" in files:
-            file_path = os.path.join(root, "infeasible_info.json")
+        if "unachievable_info.json" in files:
+            file_path = os.path.join(root, "unachievable_info.json")
             try:
                 os.remove(file_path)
                 print(f"已删除: {file_path}")

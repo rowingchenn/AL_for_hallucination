@@ -178,15 +178,14 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
 
     # 添加输入步骤和输入内容
     exp_dir_name = os.path.basename(exp_dir)
-    if exp_dir_name in truncate_map:
-        input_step = truncate_map[exp_dir_name]
-        info["input_step"] = input_step
+    input_step = truncate_map[exp_dir_name]
+    info["input_step"] = input_step
 
-        input_content, error = get_input_from_step(exp_dir, input_step)
-        if input_content:
-            info["input"] = input_content
-        elif error:
-            print(f"无法获取输入内容: {error}")
+    input_content, error = get_input_from_step(exp_dir, input_step)
+    if input_content:
+        info["input"] = input_content
+    elif error:
+        print(f"无法获取输入内容: {error}")
 
     # 保存到info.json
     info_path = os.path.join(exp_dir, options.output_filename)
@@ -287,18 +286,24 @@ def main():
     print(f"找到 {len(exp_dirs)} 个实验目录")
 
     success_count = 0
+    skipped_count = 0
 
     # 对于每个实验目录，加载并处理exp_args
     for exp_dir in exp_dirs:
         exp_dir_name = os.path.basename(exp_dir)
 
+        # 检查是否在截断映射中
+        if exp_dir_name not in truncate_map:
+            if not options.quiet:
+                print(f"\n跳过 {exp_dir_name}：不在截断映射中")
+            skipped_count += 1
+            continue
+
         if not options.quiet:
             print("\n" + "=" * 80)
             print(f"实验目录: {exp_dir_name}")
             print("=" * 80)
-
-            if exp_dir_name in truncate_map:
-                print(f"关键输入步骤: {truncate_map[exp_dir_name]}")
+            print(f"关键输入步骤: {truncate_map[exp_dir_name]}")
         else:
             print(f"处理: {exp_dir_name}")
 
@@ -333,7 +338,10 @@ def main():
         else:
             print("无法加载实验参数")
 
-    print(f"\n成功生成 {success_count}/{len(exp_dirs)} 个{options.output_filename}文件")
+    print(
+        f"\n成功生成 {success_count}/{len(exp_dirs) - skipped_count} 个{options.output_filename}文件"
+    )
+    print(f"跳过 {skipped_count} 个不在截断映射中的实验目录")
 
 
 if __name__ == "__main__":
