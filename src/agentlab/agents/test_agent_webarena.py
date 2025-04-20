@@ -26,7 +26,7 @@ os.environ["WA_WIKIPEDIA"] = "http://111.229.174.217:19003"
 os.environ["WA_MAP"] = "http://111.229.174.217:18084"
 os.environ["WA_HOMEPAGE"] = "http://111.229.174.217:18081"
 #os.environ["WA_FULL_RESET"] = "http://111.229.174.217:17565" # /satus 访问不了，因此暂时跳过
-os.environ["WA_FULL_RESET"] = "http://111.229.174.217:17565/reset"
+os.environ["WA_FULL_RESET"] = ""
 
 FLAGS_TEST = GenericPromptFlags(
     obs=dp.ObsFlags(
@@ -89,16 +89,25 @@ def main():
 
     # 定义要测试的任务列表
     task_name_list = [
+        # "webarena.1",
         # "webarena.2",
-        # "webarena.3",
-        "webarena.4",
-        # "webarena.5",
+        # "webarena.3", # 结果不对，且task还需要修改
+        # "webarena.4", # 结果不对，且task还需要修改
+        # "webarena.5", # task 需要修改，没有chatgpt-plugin这个repo
         # "webarena.6",
+        # "webarena.7", # traj 不理想
+        # "webarena.8", # 在 task 中没有要求agent翻遍完整窗口，当前agent好像只能看到window显示的部分，需要在instruction中显式说明请翻遍窗口？
+        # "webarena.9",
+        # "webarena.10",
+        # "webarena.11", # 要手动修改traj，unexpected transition
+        #  "webarena.12", # traj 不理想
+        # "webarena.13",
+        # "webarena.14",
+        # "webarena.15",
+        "webarena.16",
+        "webarena.17",
         "webarena.18",
-        # "webarena.7",
-        # "webarena.11",
-        # "webarena.16",
-        # "webarena.17",
+        "webarena.19"
     ]
 
     # 初始化空的实验参数列表
@@ -109,12 +118,12 @@ def main():
         env_args = EnvArgs(
             task_name=task_name,
             task_seed=89,
-            max_steps=20,
-            headless=False,  # 如果在自己电脑上跑可以设置成 true
+            max_steps=30,
+            headless=True,  # 如果在自己电脑上跑可以设置成 true
             # timeout=15000,
         )
 
-        # 特殊处理 openended 任务
+        # 特殊处理 openended 任务 可以自己操作 来处理human in the loop场景
         if task_name == "openended":
             AGENT_TEST.flags.enable_chat = True
             env_args.wait_for_user_message = True
@@ -133,7 +142,7 @@ def main():
         benchmark = bgym.DEFAULT_BENCHMARKS[
             "webarena"
         ]() 
-        # benchmark = bgym.DEFAULT_BENCHMARKS["assistantbench"]()
+        # benchmark = bgym.DEFAULT_BENCHMARKS["assistantbench"]() 
         exp_args.agent_args.set_benchmark(
             benchmark, demo_mode=True
         )  # Override Some flags based on the benchmark.
