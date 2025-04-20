@@ -116,15 +116,15 @@ def main():
     # ]
 
     task_name_list = [
-        "workarena.servicenow.infeasible-navigate-and-order-ipad-pro-l2",
-        "workarena.servicenow.infeasible-navigate-and-order-standard-laptop-l2",
-        "workarena.servicenow.infeasible-navigate-and-order-apple-mac-book-pro15-l2",
-        # "workarena.servicenow.infeasible-navigate-and-filter-incident-list-l2",
-        # "workarena.servicenow.infeasible-navigate-and-filter-change-request-list-l2",
-        # "workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-l2",
-        # "workarena.servicenow.infeasible-navigate-and-sort-user-list-l2",
-        # "workarena.servicenow.infeasible-navigate-and-sort-incident-list-l2",
-        # "workarena.servicenow.infeasible-navigate-and-sort-service-catalog-item-list-l2",
+        # "workarena.servicenow.infeasible-navigate-and-order-ipad-pro-l2",
+        # "workarena.servicenow.infeasible-navigate-and-order-standard-laptop-l2",
+        # "workarena.servicenow.infeasible-navigate-and-order-apple-mac-book-pro15-l2",
+        "workarena.servicenow.infeasible-navigate-and-filter-incident-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-filter-change-request-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-sort-user-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-sort-incident-list-l2",
+        "workarena.servicenow.infeasible-navigate-and-sort-service-catalog-item-list-l2",
     ]
 
     # 初始化空的实验参数列表

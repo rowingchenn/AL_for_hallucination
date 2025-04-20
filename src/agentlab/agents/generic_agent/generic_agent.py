@@ -124,6 +124,7 @@ class GenericAgent(Agent):
             # cause it to be too long
 
             chat_messages = Discussion([system_prompt, human_prompt])
+
             ans_dict = retry(
                 self.chat_llm,
                 chat_messages,
