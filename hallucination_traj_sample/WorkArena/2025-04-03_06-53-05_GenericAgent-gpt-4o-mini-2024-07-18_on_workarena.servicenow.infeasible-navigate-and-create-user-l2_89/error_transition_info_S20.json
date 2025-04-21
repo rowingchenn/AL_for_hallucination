@@ -1,0 +1,19 @@
+{
+    "task_name": "workarena.servicenow.infeasible-navigate-and-create-user-l2",
+    "task_seed": 89,
+    "agent_name": "GenericAgent-gpt-4o-mini-2024-07-18",
+    "model_config": {
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "max_tokens": 16384,
+        "temperature": 0.1
+    },
+    "max_steps": 20,
+    "observation_settings": {
+        "use_html": false,
+        "use_ax_tree": true,
+        "use_screenshot": false,
+        "use_som": false
+    },
+    "goal": "({'type': 'text', 'text': 'Create a new user\\n \\n Concretely, you need to complete the following steps:\\n1. Navigate to the \"Users\" module of the \"Organization\" application.\\n2. Create a new user with a value of \"3976365003782091151\" for field \"User ID\", a value of \"Wilson-Miller\" for field \"Last name\", a value of \"Stacy-Deborah\" for field \"First name\", a value of \"stacy-deborah.wilson-miller@workarena.com\" for field \"Email\", a value of \"false\" for field \"Locked out\", a value of \"English\" for field \"Language\", a value of \"Outlook\" for field \"Calendar integration\", a value of \"false\" for field \"Web service access only\", a value of \"MM-dd-yyyy\" for field \"Date format\", a value of \"false\" for field \"Internal Integration User\", a value of \"Canada/Pacific\" for field \"Time zone\", a value of \"false\" for field \"Password needs reset\", a value of \"basophilia isopachous semicadence unextorted sulphonmethane\" for field \"Title\", a value of \"Finance\" for field \"Department\", a value of \"(514) 227-1492\" for field \"Business phone\", a value of \"true\" for field \"Active\", and a value of \"security\" for field \"This reality\".'},)",
+    "input_step": 20
+}

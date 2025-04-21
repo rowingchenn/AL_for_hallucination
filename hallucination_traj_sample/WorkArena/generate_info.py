@@ -7,7 +7,7 @@ import json
 from pprint import pprint
 import re
 import argparse
-from typing import Any, Dict
+from typing import Any, Dict, List, Union
 
 
 class CustomEncoder(json.JSONEncoder):
@@ -162,8 +162,8 @@ def extract_info_from_exp_args(exp_args):
         return {"error": f"提取信息失败: {str(e)}", "raw_exp_args": str(exp_args)}
 
 
-def generate_info_json(exp_dir, exp_args, options, truncate_map):
-    """生成并保存info.json文件"""
+def generate_info_json_for_step(exp_dir, exp_args, options, step_num, suffix=""):
+    """为单个步骤生成并保存info.json文件"""
     # 基本信息
     info = extract_info_from_exp_args(exp_args)
     if not info:
@@ -177,18 +177,22 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
             info["goal"] = str(goal_object)
 
     # 添加输入步骤和输入内容
-    exp_dir_name = os.path.basename(exp_dir)
-    input_step = truncate_map[exp_dir_name]
-    info["input_step"] = input_step
+    info["input_step"] = step_num
 
-    input_content, error = get_input_from_step(exp_dir, input_step)
+    input_content, error = get_input_from_step(exp_dir, step_num)
     if input_content:
         info["input"] = input_content
     elif error:
-        print(f"无法获取输入内容: {error}")
+        print(f"无法获取步骤 {step_num} 的输入内容: {error}")
+
+    # 确定输出文件名
+    if suffix:
+        output_filename = options.output_filename.replace(".json", f"{suffix}.json")
+    else:
+        output_filename = options.output_filename
 
     # 保存到info.json
-    info_path = os.path.join(exp_dir, options.output_filename)
+    info_path = os.path.join(exp_dir, output_filename)
     try:
         with open(info_path, "w", encoding="utf-8") as f:
             json.dump(info, f, indent=4, ensure_ascii=False, cls=CustomEncoder)
@@ -196,7 +200,7 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
         print(f"已生成 {info_path}")
         return True
     except Exception as e:
-        print(f"保存info.json时出错: {e}")
+        print(f"保存 {output_filename} 时出错: {e}")
 
         # 尝试保存简化版本
         try:
@@ -204,6 +208,7 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
                 "task_name": info.get("task_name"),
                 "task_seed": info.get("task_seed"),
                 "agent_name": info.get("agent_name"),
+                "input_step": step_num,
                 "error": f"完整信息无法序列化: {str(e)}",
             }
             with open(info_path, "w", encoding="utf-8") as f:
@@ -211,8 +216,35 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
             print(f"已生成简化版 {info_path}")
             return True
         except Exception as e2:
-            print(f"保存简化版info.json时也出错: {e2}")
+            print(f"保存简化版 {output_filename} 时也出错: {e2}")
             return False
+
+
+def generate_info_json(exp_dir, exp_args, options, truncate_map):
+    """生成并保存info.json文件，处理单个步骤或多个步骤的情况"""
+    exp_dir_name = os.path.basename(exp_dir)
+
+    # 获取映射中的值
+    steps_data = truncate_map.get(exp_dir_name)
+    if steps_data is None:
+        print(f"错误: {exp_dir_name} 不在截断映射中")
+        return False
+
+    # 判断是单个步骤还是多个步骤
+    if isinstance(steps_data, list):
+        # 多个步骤的情况
+        success_count = 0
+        for i, step_num in enumerate(steps_data):
+            # 生成带有步骤编号的后缀
+            suffix = f"_S{step_num}"
+            if generate_info_json_for_step(exp_dir, exp_args, options, step_num, suffix):
+                success_count += 1
+
+        return success_count > 0
+    else:
+        # 单个步骤的情况（兼容旧格式）
+        step_num = steps_data
+        return generate_info_json_for_step(exp_dir, exp_args, options, step_num)
 
 
 def load_result_summary(exp_dir):
@@ -239,7 +271,7 @@ def parse_args():
     parser.add_argument(
         "--truncate-map",
         type=str,
-        default="truncate_map.json",
+        default="error_transition_truncate_map.json",
         help="截断映射文件，指定每个实验的关键输入步骤",
     )
 
@@ -287,6 +319,7 @@ def main():
 
     success_count = 0
     skipped_count = 0
+    total_files_generated = 0
 
     # 对于每个实验目录，加载并处理exp_args
     for exp_dir in exp_dirs:
@@ -303,7 +336,13 @@ def main():
             print("\n" + "=" * 80)
             print(f"实验目录: {exp_dir_name}")
             print("=" * 80)
-            print(f"关键输入步骤: {truncate_map[exp_dir_name]}")
+
+            # 显示关键输入步骤（可能是单个步骤或数组）
+            steps_data = truncate_map[exp_dir_name]
+            if isinstance(steps_data, list):
+                print(f"关键输入步骤: {steps_data} (多个步骤)")
+            else:
+                print(f"关键输入步骤: {steps_data}")
         else:
             print(f"处理: {exp_dir_name}")
 
@@ -324,8 +363,14 @@ def main():
                     print(f"无法提取某些重要信息: {e}")
 
             # 生成info.json
-            if generate_info_json(exp_dir, exp_args, options, truncate_map):
+            result = generate_info_json(exp_dir, exp_args, options, truncate_map)
+            if result:
                 success_count += 1
+                # 计算生成的文件数量
+                if isinstance(truncate_map[exp_dir_name], list):
+                    total_files_generated += len(truncate_map[exp_dir_name])
+                else:
+                    total_files_generated += 1
 
             # 尝试加载结果摘要(仅显示，不写入info.json)
             if not options.quiet:
@@ -338,9 +383,8 @@ def main():
         else:
             print("无法加载实验参数")
 
-    print(
-        f"\n成功生成 {success_count}/{len(exp_dirs) - skipped_count} 个{options.output_filename}文件"
-    )
+    print(f"\n成功处理 {success_count}/{len(exp_dirs) - skipped_count} 个实验目录")
+    print(f"总共生成了 {total_files_generated} 个info文件")
     print(f"跳过 {skipped_count} 个不在截断映射中的实验目录")
 
 

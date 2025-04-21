@@ -1,0 +1,20 @@
+{
+    "task_name": "workarena.servicenow.priority-filter-problems-and-mark-duplicates-small-l2",
+    "task_seed": 89,
+    "agent_name": "GenericAgent-gpt-4o-mini-2024-07-18",
+    "model_config": {
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "max_tokens": 16384,
+        "temperature": 0.1
+    },
+    "max_steps": 20,
+    "observation_settings": {
+        "use_html": false,
+        "use_ax_tree": true,
+        "use_screenshot": false,
+        "use_som": false
+    },
+    "goal": "({'type': 'text', 'text': 'Clean-up your duplicate problems\\n \\n Concretely, you need to complete the following steps:\\n1. Navigate to the \"All\" module of the \"Problem\" application.\\n2. Create a filter for the list to extract all entries where:\\n    - \"Problem statement\" contains \"#SERIES-2d75bd9e-2\"\\n3. Among the problems with duplicated problem statements, mark the lower priority one as duplicate of the higher priority one'},)",
+    "input_step": 11,
+    "input": "Error while parsing action\n: Invalid action type 'scroll_to'.\nMake sure your answer is restricted to the allowed actions."
+}

@@ -1,0 +1,20 @@
+{
+    "task_name": "workarena.servicenow.get-warranty-expiration-date-l2",
+    "task_seed": 89,
+    "agent_name": "GenericAgent-gpt-4o-mini-2024-07-18",
+    "model_config": {
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "max_tokens": 16384,
+        "temperature": 0.1
+    },
+    "max_steps": 20,
+    "observation_settings": {
+        "use_html": false,
+        "use_ax_tree": true,
+        "use_screenshot": false,
+        "use_som": false
+    },
+    "goal": "({'type': 'text', 'text': 'Find the warranty expiration date for Linda-Alisha Wilson-Hernandez\\'s laptop\\n \\n Concretely, you need to complete the following steps:\\n1. Navigate to the \"Portfolios > Hardware Assets\" module of the \"Asset\" application.\\n2. Create a filter for the list to extract all entries where:\\n    - \"Assigned to\" is \"Linda-Alisha Wilson-Hernandez\"\\n3. - Extract information of field \"Warranty expiration\" from the \"Hardware Assets\" list. Please provide this information in the chat.'},)",
+    "input_step": 10,
+    "input": "Error while parsing action\n: Received a multi-action, only single-actions are allowed.\nMake sure your answer is restricted to the allowed actions."
+}

@@ -90,10 +90,10 @@ def find_env_errors(trajectories_dir, output_file=None, move_to_dir=None, error_
                         "current_step_thought": None,
                     }
 
-                    # 更新错误映射
+                    # 更新错误映射，存储数字而不是字符串
                     if task_name not in error_transition_map:
                         error_transition_map[task_name] = []
-                    error_transition_map[task_name].append(step_name)
+                    error_transition_map[task_name].append(step_num)  # 使用数字步骤编号而不是字符串
 
                     # 查找上一步（导致错误的步骤）的action和thought
                     if step_num > 0:

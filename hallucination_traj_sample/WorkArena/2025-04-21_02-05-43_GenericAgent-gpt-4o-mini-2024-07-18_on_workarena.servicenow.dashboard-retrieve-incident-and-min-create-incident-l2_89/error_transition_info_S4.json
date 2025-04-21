@@ -1,0 +1,20 @@
+{
+    "task_name": "workarena.servicenow.dashboard-retrieve-incident-and-min-create-incident-l2",
+    "task_seed": 89,
+    "agent_name": "GenericAgent-gpt-4o-mini-2024-07-18",
+    "model_config": {
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "max_tokens": 16384,
+        "temperature": 0.1
+    },
+    "max_steps": 20,
+    "observation_settings": {
+        "use_html": false,
+        "use_ax_tree": true,
+        "use_screenshot": false,
+        "use_som": false
+    },
+    "goal": "({'type': 'text', 'text': \"Retrieve information from the chart with title #INC033454704 and perform the mentioned task.\\n For calculations, please round off to the next highest integer if required. If the required calculation has multiple possible answers (for example, 'mode' or 'most frequently' occuring value), please consider the highest value.\\n\\n\\n1. Navigate to the Reports > View/Run page. \\n\\n2. Given the title of the report, search for it on this page. The report shows the number of 'incidents' assigned to an 'agent'.\\n\\n3. Find the agents with a number of incidents assigned less than or equal to the minimum of the number of assigned incidents across agents. For example, if you were asked to find the 'mean' or 'average' for a case where there are 4 agents assigned 1,2,3,2 incidents respectively, the mean would be 2. The list of agents required for solving the following task would be all the agents that have less than or equal to 2 assigned incidents.\\n\\n4. Navigate to Service Desk > Incidents. \\n\\n5. You have to create new 'incidents' from this page for all the agents based on the above criteria. Only fill the following fields when creating a new incident:- Category: 'Inquiry / Help', Impact: '1 - High', Urgency: '1 - High', Short description: 'Compulsory training for employee in probation', Caller: 'Kaitlyn Floyd' and 'assign' them to each agent using the 'Assigned to' field.\\n\\nImportantly, you should override the default incident numbers in the form and instead use one incident number from the following list for each incident you create: INC5300607.\\nNote that you will create as many incidents as there are agents matching the above criteria.\\nFor example, consider the above case and say you have 3 agents with less than or equal to 2 incidents assigned to them in the chart. You will be creating '3' new incidents here, one assigned to each agent. \\n\"},)",
+    "input_step": 4,
+    "input": "Error while parsing action\n: Received a multi-action, only single-actions are allowed.\nMake sure your answer is restricted to the allowed actions."
+}

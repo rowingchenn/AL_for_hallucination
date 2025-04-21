@@ -1,0 +1,20 @@
+{
+    "task_name": "workarena.servicenow.filter-three-items-uniform-expenses-and-find-total-return-large-l2",
+    "task_seed": 89,
+    "agent_name": "GenericAgent-gpt-4o-mini-2024-07-18",
+    "model_config": {
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "max_tokens": 16384,
+        "temperature": 0.1
+    },
+    "max_steps": 20,
+    "observation_settings": {
+        "use_html": false,
+        "use_ax_tree": true,
+        "use_screenshot": false,
+        "use_som": false
+    },
+    "goal": "({'type': 'text', 'text': 'Allocate investments to maximize returns\\n \\n Concretely, you need to complete the following steps:\\n1. Navigate to the \"Expense Lines\" module of the \"Cost\" application.\\n2. Create a filter for the list to extract all entries where:\\n    - \"Short description\" contains \"#25dadd26-c\"\\n3. Allocate the budget to maximize revenue. This involves going over expense lines and identifying the ones maximizing revenue while fitting in the allowed budget of 611918 $. The returns are written in their short description. Provide only the total return of the investments in the chat.'},)",
+    "input_step": 5,
+    "input": "Error while parsing action\n: Received a multi-action, only single-actions are allowed.\nMake sure your answer is restricted to the allowed actions."
+}
