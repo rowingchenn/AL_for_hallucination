@@ -1,0 +1,203 @@
+{
+  "2025-04-21_02-51-59_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.filter-three-items-uniform-expenses-and-find-total-return-large-l2_89": [
+    "step_4",
+    "step_5"
+  ],
+  "2025-04-21_01-19-38_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.priority-assignment-small-l2_89": [
+    "step_3",
+    "step_5",
+    "step_9"
+  ],
+  "2025-04-11_19-18-25_GenericAgent-gpt-4o-2024-11-20_on_workarena.servicenow.infeasible-navigate-and-create-change-request-l2_89": [
+    "step_8",
+    "step_12",
+    "step_21",
+    "step_22",
+    "step_23"
+  ],
+  "2025-04-21_02-48-44_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.filter-random-expenses-and-find-total-return-small-l2_89": [
+    "step_5",
+    "step_6"
+  ],
+  "2025-04-03_06-53-05_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.infeasible-navigate-and-create-user-l2_89": [
+    "step_5",
+    "step_6",
+    "step_7",
+    "step_8",
+    "step_9",
+    "step_10",
+    "step_11",
+    "step_12",
+    "step_13",
+    "step_14",
+    "step_15",
+    "step_16",
+    "step_17",
+    "step_18",
+    "step_19",
+    "step_20"
+  ],
+  "2025-04-21_01-23-53_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.two-changes-basic-uniform-risk-change-request-scheduling-l2_89": [
+    "step_2",
+    "step_6"
+  ],
+  "2025-04-12_01-07-24_GenericAgent-gpt-4o-2024-11-20_on_workarena.servicenow.infeasible-navigate-and-filter-asset-list-l2_89": [
+    "step_9",
+    "step_15",
+    "step_17"
+  ],
+  "2025-04-21_02-32-55_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.filter-requested-items-and-order-developer-laptop-l2_89": [
+    "step_3",
+    "step_9"
+  ],
+  "2025-04-21_01-32-21_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.three-changes-basic-uniform-risk-change-request-scheduling-l2_89": [
+    "step_9",
+    "step_11",
+    "step_12",
+    "step_14"
+  ],
+  "2025-04-11_19-24-22_GenericAgent-gpt-4o-2024-11-20_on_workarena.servicenow.infeasible-navigate-and-create-problem-l2_89": [
+    "step_5",
+    "step_18"
+  ],
+  "2025-04-21_02-24-30_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.get-warranty-expiration-date-l2_89": [
+    "step_6",
+    "step_7",
+    "step_8",
+    "step_9",
+    "step_10"
+  ],
+  "2025-04-17_23-42-00_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-change-request-list-l2_89": [
+    "step_10"
+  ],
+  "2025-04-11_05-40-45_GenericAgent-o3-mini-2025-01-31_on_workarena.servicenow.infeasible-navigate-and-create-hardware-asset-l2_89": [
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7",
+    "step_8",
+    "step_9",
+    "step_10",
+    "step_11",
+    "step_12",
+    "step_13",
+    "step_14",
+    "step_15",
+    "step_16",
+    "step_17"
+  ],
+  "2025-04-17_23-55-25_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-user-list-l2_89": [
+    "step_15"
+  ],
+  "2025-04-10_07-32-48_GenericAgent-o3-mini-2025-01-31_on_workarena.servicenow.infeasible-navigate-and-create-user-l2_89": [
+    "step_1"
+  ],
+  "2025-04-21_01-08-16_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.high-priority-filter-problems-and-mark-duplicates-small-l2_89": [
+    "step_10",
+    "step_11",
+    "step_12"
+  ],
+  "2025-04-21_01-45-36_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.three-changes-priority-uniform-risk-change-request-scheduling-l2_89": [
+    "step_2",
+    "step_3",
+    "step_6",
+    "step_7"
+  ],
+  "2025-04-21_01-00-38_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.basic-filter-problems-and-mark-duplicates-small-l2_89": [
+    "step_5",
+    "step_8"
+  ],
+  "2025-04-10_07-22-55_GenericAgent-gemini-2.0-flash_on_workarena.servicenow.infeasible-navigate-and-create-user-l2_89": [
+    "step_5",
+    "step_6",
+    "step_7",
+    "step_8",
+    "step_9",
+    "step_10",
+    "step_11",
+    "step_12",
+    "step_13",
+    "step_14"
+  ],
+  "2025-04-17_21-19-07_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-ipad-pro-l2_89": [
+    "step_5",
+    "step_6"
+  ],
+  "2025-04-21_01-49-21_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.dashboard-retrieve-catalog-and-max-order-developer-laptop-l2_89": [
+    "step_11",
+    "step_17"
+  ],
+  "2025-04-12_01-47-07_GenericAgent-gpt-4o-2024-11-20_on_workarena.servicenow.infeasible-navigate-and-sort-incident-list-l2_89": [
+    "step_14",
+    "step_18"
+  ],
+  "2025-04-21_01-15-27_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.work-assignment-small-l2_89": [
+    "step_3",
+    "step_5"
+  ],
+  "2025-04-11_20-32-48_GenericAgent-gpt-4o-2024-11-20_on_workarena.servicenow.infeasible-navigate-and-create-hardware-asset-l2_89": [
+    "step_17"
+  ],
+  "2025-04-21_02-15-00_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.dashboard-retrieve-incident-and-max-request-apple-watch-l2_89": [
+    "step_7",
+    "step_8",
+    "step_9",
+    "step_10",
+    "step_11",
+    "step_12"
+  ],
+  "2025-04-21_02-05-43_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.dashboard-retrieve-incident-and-min-create-incident-l2_89": [
+    "step_2",
+    "step_4"
+  ],
+  "2025-04-21_01-28-29_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.two-changes-fix-basic-uniform-risk-change-request-scheduling-l2_89": [
+    "step_9",
+    "step_11"
+  ],
+  "2025-04-21_01-37-12_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.two-changes-priority-uniform-risk-change-request-scheduling-l2_89": [
+    "step_5"
+  ],
+  "2025-04-12_01-32-05_GenericAgent-gpt-4o-2024-11-20_on_workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-l2_89": [
+    "step_6"
+  ],
+  "2025-04-12_01-16-54_GenericAgent-gpt-4o-2024-11-20_on_workarena.servicenow.infeasible-navigate-and-filter-incident-list-l2_89": [
+    "step_11",
+    "step_12"
+  ],
+  "2025-04-11_23-40-18_GenericAgent-gpt-4o-2024-11-20_on_workarena.servicenow.infeasible-navigate-and-order-ipad-pro-l2_89": [
+    "step_12"
+  ],
+  "2025-04-21_01-11-39_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.workload-balancing-small-l2_89": [
+    "step_6",
+    "step_7",
+    "step_8",
+    "step_17"
+  ],
+  "2025-04-09_05-57-15_GenericAgent-gemini-2.0-flash_on_workarena.servicenow.infeasible-navigate-and-create-user-l2_89": [
+    "step_17"
+  ],
+  "2025-04-17_23-48-38_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-l2_89": [
+    "step_8"
+  ],
+  "2025-04-21_01-04-30_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.priority-filter-problems-and-mark-duplicates-small-l2_89": [
+    "step_11"
+  ],
+  "2025-04-11_01-01-42_GenericAgent-o3-mini-2025-01-31_on_workarena.servicenow.infeasible-navigate-and-create-incident-l2_89": [
+    "step_11"
+  ],
+  "2025-04-03_06-45-44_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.infeasible-navigate-and-create-user-l2_89": [
+    "step_5"
+  ],
+  "2025-04-21_02-45-21_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.basic-expense-management-small-l2_89": [
+    "step_4",
+    "step_6"
+  ],
+  "2025-04-12_01-24-55_GenericAgent-gpt-4o-2024-11-20_on_workarena.servicenow.infeasible-navigate-and-filter-hardware-list-l2_89": [
+    "step_19"
+  ],
+  "2025-04-21_03-02-53_GenericAgent-gpt-4o-mini-2024-07-18_on_workarena.servicenow.dashboard-retrieve-incident-and-mean-create-incident-l2_89": [
+    "step_14",
+    "step_17"
+  ]
+}

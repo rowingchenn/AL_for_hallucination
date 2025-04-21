@@ -23,10 +23,10 @@ FLAGS_TEST = GenericPromptFlags(
     obs=dp.ObsFlags(
         use_html=False,
         use_ax_tree=True,
-        use_focused_element=True,
+        use_focused_element=False,
         use_error_logs=True,
         use_history=True,
-        use_past_error_logs=False,
+        use_past_error_logs=True,
         use_action_history=True,
         use_think_history=True,
         use_diff=False,
@@ -62,9 +62,9 @@ FLAGS_TEST = GenericPromptFlags(
 
 AGENT_TEST = GenericAgentArgs(
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
-    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
-    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["google/gemini-2.0-flash"],
@@ -116,15 +116,29 @@ def main():
     # ]
 
     task_name_list = [
-        # "workarena.servicenow.infeasible-navigate-and-order-ipad-pro-l2",
-        # "workarena.servicenow.infeasible-navigate-and-order-standard-laptop-l2",
-        # "workarena.servicenow.infeasible-navigate-and-order-apple-mac-book-pro15-l2",
-        "workarena.servicenow.infeasible-navigate-and-filter-incident-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-filter-change-request-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-sort-user-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-sort-incident-list-l2",
-        "workarena.servicenow.infeasible-navigate-and-sort-service-catalog-item-list-l2",
+        "workarena.servicenow.basic-filter-problems-and-mark-duplicates-small-l2",
+        "workarena.servicenow.priority-filter-problems-and-mark-duplicates-small-l2",
+        "workarena.servicenow.high-priority-filter-problems-and-mark-duplicates-small-l2",
+        "workarena.servicenow.workload-balancing-small-l2",
+        "workarena.servicenow.work-assignment-small-l2",
+        "workarena.servicenow.priority-assignment-small-l2",
+        "workarena.servicenow.two-changes-basic-uniform-risk-change-request-scheduling-l2",
+        "workarena.servicenow.two-changes-fix-basic-uniform-risk-change-request-scheduling-l2",
+        "workarena.servicenow.three-changes-basic-uniform-risk-change-request-scheduling-l2",
+        "workarena.servicenow.two-changes-priority-uniform-risk-change-request-scheduling-l2",
+        "workarena.servicenow.two-changes-wide-priority-varied-risk-change-request-scheduling-l2",
+        "workarena.servicenow.two-changes-tight-priority-varied-risk-change-request-scheduling-l2",
+        "workarena.servicenow.three-changes-priority-uniform-risk-change-request-scheduling-l2",
+        "workarena.servicenow.dashboard-retrieve-catalog-and-max-order-developer-laptop-l2",
+        "workarena.servicenow.dashboard-retrieve-incident-and-min-create-incident-l2",
+        "workarena.servicenow.dashboard-retrieve-incident-and-max-request-apple-watch-l2",
+        "workarena.servicenow.get-warranty-expiration-date-l2",
+        "workarena.servicenow.filter-requested-items-and-order-developer-laptop-l2",
+        "workarena.servicenow.basic-expense-management-small-l2",
+        "workarena.servicenow.filter-random-expenses-and-find-total-return-small-l2",
+        "workarena.servicenow.filter-three-items-uniform-expenses-and-find-total-return-large-l2",
+        "workarena.servicenow.dashboard-retrieve-catalog-and-mean-order-developer-laptop-l2",
+        "workarena.servicenow.dashboard-retrieve-incident-and-mean-create-incident-l2",
     ]
 
     # 初始化空的实验参数列表
