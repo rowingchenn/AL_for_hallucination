@@ -74,50 +74,59 @@ AGENT_TEST = GenericAgentArgs(
     #chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
     #chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
-    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["google/gemini-2.0-flash"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-mini-2024-09-12"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4-1106-preview"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["local/Qwen2.5-7B-Instruct"],
-    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/claude-3.7-sonnet"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openrouter/anthropic/claude-3.7-sonnet"],
     flags=FLAGS_TEST,
     max_retry=3,
 )
 
 
 def main():
-    exp_dir = "./test_results/"
+    exp_dir = "./test_results_webarena_unexpected_transition/"
 
     # 定义要测试的任务列表
     task_name_list = [
-        # "webarena.1",
-        # "webarena.2",
-        "webarena.3", # o3 前面的都不对
-        "webarena.4", # o3 前面的都不对，换成 o1-mini 也不对，都是应该一个一个人invite，但是总是把五个人的名字一起输到搜索框里 离谱！！ 修改task说需要一个一个邀请
-        # "webarena.5", # task 需要修改，没有chatgpt-plugin这个repo，已修改成 Primer 的 design repo，但是后面的traj不对，说找不到invite-collaborator的按钮所以report infeasible
-        # "webarena.6",
-        "webarena.7", # traj 不理想，还没有重新跑
-        "webarena.8", # 在 task 中没有要求agent翻遍完整窗口，当前agent好像只能看到window显示的部分，需要在instruction中显式说明请翻遍窗口？
-        # "webarena.9",
-        # "webarena.10",
-        # "webarena.11", # 要手动修改traj，unexpected transition
-        "webarena.12", # traj 不理想，没有使用sort 按钮不能手动修改unexpected transition，于是直接在task instruction中写明“You can use the 'Sort By' button to sort by price.” 但模型使用advanced search的时候太精细了，还是不行，先放一下，直接用最强的模型 claude-2-saunet，或者用简单一点的task，删除with a minimum storage capacity of {{min_storage}}限制
-        # "webarena.13", # api报错，怎么debug 
-        # "webarena.14", # ok了
-        "webarena.15", # 网络连接错误，重新跑 感觉设计的不好 换过
-        # "webarena.16", # n=1直接就可以了
-        # "webarena.17", 
-        # "webarena.18", # API报错了
-        "webarena.19", # gpt4o的结果不理想，4o-mini也不理想，总是跳转到booking webpage，需要修改task instruction，已修改成find而不是book，还是不对，已简化！
-        "webarena.20" # 结果不理想，没有成功创建两个repo！
+        #"webarena.4",
+        #"webarena.13",
+        #"webarena.42",
+        #"webarena.95",
+        #"webarena.208",
+        #"webarena.288",
+        #"webarena.470",
+        #"webarena.32", # 16-18的第一步后api_base就变回官网了，不知道咋改
+        "webarena.86", # 223,218的第一步后api_base就变回官网了，不知道咋改
+        #"webarena.248",
+        #"webarena.363",
+        #"webarena.380",
+        #"webarena.144", # 22的第一步后api_base就变回官网了，不知道咋改
+        #"webarena.329", # 50的第一步后api_base就变回官网了，不知道咋改
+        #"webarena.229",
+        #"webarena.284",
+        #"webarena.324", 
+        #"webarena.506", # timeout，已解决
+        #"webarena.692",
+        #"webarena.600",
+        #"webarena.609",
+        #"webarena.714",
+        #"webarena.732",
+        #"webarena.293",
+        #"webarena.390", # 网站加载超时
+        #"webarena.411",
+        #"webarena.480",
+        #"webarena.808" 
+
         # 飞书下面workArena下面的 unexpected transition，在正常的task上
         # 1.error, 环境会报错，能不能在下一步action意识到上一步又报错了，而是觉得上一步action已经完成了
         # 2.accident，正常跑，人为把这一步的observation捏造成上一步的
         # 拿o4-mini挑20个webarena的task（每一个环境有五个），标注出哪一个step是关键的
         # shopping_admin: 4, 13(可以修改为填写不存在的栏的task)，42，95，208,288,470(按cancel之后还是同样的界面，是否直接认为是cancel掉了，781)
-        # map: 18（在选择car并且按了go之后不动环境，搜索得到的结果还是car？）, 223（click go之后环境不动，是否认为是不存在搜索结果还是认为可能是没有click上go），248（同223），363（同223），380
-        # shopping:22（Click on the 'Page 2' link），50（Click on the 'Page 3' link），229（sorted by），284（sort by），324/325（sort by），506（Click on the 'Next' button后不动，是否会认为已经买完了），692(type完email和name后保持环境不变，会不会认为已经填写完了)
+        # map: 18-》32（在选择car并且按了go之后不动环境，搜索得到的结果还是car/foot？）, 223-》218-》81（click go之后环境不动，是否认为是不存在搜索结果还是认为可能是没有click上go），248（同223），363（同223），380
+        # shopping:22（Click on the 'Page 2' link）-》144（Click on the 'View All' link 后环境不变），50->329（Click on the 'Page 3' link），229（sorted by），284（sort by），324/325（sort by），506（Click on the 'Next' button后不动，是否会认为已经买完了），692(type完email和name后保持环境不变，会不会认为已经填写完了)
         # reddit: 600-604( Type xxx into the 'Body' textbox. 其实没type进去)，609-612（Type 'xx' into the 'Title' textbox.这是必填项，但是没填进去），714-716（sort & thumbs down 两个都可以设置hallu），732
         # gitlab：293-297（Click on the 'Next' link翻页，但在中间一步没有翻页成功），390（没有成功填入），411-414（需要ensure是不是在main branch），480-485（invite之后环境不变），808（ Click on the 'Create merge request' button后环境不动）
     ]
