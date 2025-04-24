@@ -70,11 +70,11 @@ FLAGS_TEST = GenericPromptFlags(
 )
 
 AGENT_TEST = GenericAgentArgs(
-    #chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
-    #chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
-    #chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
-    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
-    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["google/gemini-2.0-flash"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-mini-2024-09-12"],
@@ -90,36 +90,80 @@ def main():
     exp_dir = "./test_results/"
 
     # 定义要测试的任务列表
-    task_name_list = [
-        # "webarena.1",
-        # "webarena.2",
-        "webarena.3", # o3 前面的都不对
-        "webarena.4", # o3 前面的都不对，换成 o1-mini 也不对，都是应该一个一个人invite，但是总是把五个人的名字一起输到搜索框里 离谱！！ 修改task说需要一个一个邀请
-        # "webarena.5", # task 需要修改，没有chatgpt-plugin这个repo，已修改成 Primer 的 design repo，但是后面的traj不对，说找不到invite-collaborator的按钮所以report infeasible
-        # "webarena.6",
-        "webarena.7", # traj 不理想，还没有重新跑
-        "webarena.8", # 在 task 中没有要求agent翻遍完整窗口，当前agent好像只能看到window显示的部分，需要在instruction中显式说明请翻遍窗口？
-        # "webarena.9",
-        # "webarena.10",
-        # "webarena.11", # 要手动修改traj，unexpected transition
-        "webarena.12", # traj 不理想，没有使用sort 按钮不能手动修改unexpected transition，于是直接在task instruction中写明“You can use the 'Sort By' button to sort by price.” 但模型使用advanced search的时候太精细了，还是不行，先放一下，直接用最强的模型 claude-2-saunet，或者用简单一点的task，删除with a minimum storage capacity of {{min_storage}}限制
-        # "webarena.13", # api报错，怎么debug 
-        # "webarena.14", # ok了
-        "webarena.15", # 网络连接错误，重新跑 感觉设计的不好 换过
-        # "webarena.16", # n=1直接就可以了
-        # "webarena.17", 
-        # "webarena.18", # API报错了
-        "webarena.19", # gpt4o的结果不理想，4o-mini也不理想，总是跳转到booking webpage，需要修改task instruction，已修改成find而不是book，还是不对，已简化！
-        "webarena.20" # 结果不理想，没有成功创建两个repo！
-        # 飞书下面workArena下面的 unexpected transition，在正常的task上
-        # 1.error, 环境会报错，能不能在下一步action意识到上一步又报错了，而是觉得上一步action已经完成了
-        # 2.accident，正常跑，人为把这一步的observation捏造成上一步的
-        # 拿o4-mini挑20个webarena的task（每一个环境有五个），标注出哪一个step是关键的
-        # shopping_admin: 4, 13(可以修改为填写不存在的栏的task)，42，95，208,288,470(按cancel之后还是同样的界面，是否直接认为是cancel掉了，781)
-        # map: 18（在选择car并且按了go之后不动环境，搜索得到的结果还是car？）, 223（click go之后环境不动，是否认为是不存在搜索结果还是认为可能是没有click上go），248（同223），363（同223），380
-        # shopping:22（Click on the 'Page 2' link），50（Click on the 'Page 3' link），229（sorted by），284（sort by），324/325（sort by），506（Click on the 'Next' button后不动，是否会认为已经买完了），692(type完email和name后保持环境不变，会不会认为已经填写完了)
-        # reddit: 600-604( Type xxx into the 'Body' textbox. 其实没type进去)，609-612（Type 'xx' into the 'Title' textbox.这是必填项，但是没填进去），714-716（sort & thumbs down 两个都可以设置hallu），732
-        # gitlab：293-297（Click on the 'Next' link翻页，但在中间一步没有翻页成功），390（没有成功填入），411-414（需要ensure是不是在main branch），480-485（invite之后环境不变），808（ Click on the 'Create merge request' button后环境不动）
+    task_name_list = [ # 重新排序task_id后，每个Metacase后面标注是哪一个场景 哪一个metacase，scale是都否需要重新跑input，是否已经跑好
+
+        ### shopping
+        # "webarena.9", # ✅shopoing.unreachable.nonexist_column_report-disatisfaction-1 scale 4 个 可以用同一个input 已完成
+        # "webarena.10", # ✅shopoing.unreachable.nonexist_column_draft-refund-message-1 scale 4 个 可以用同一个input 已完成
+        #"webarena.164", # ✅shopping.misleading.unmacthed_instruction&url-1 n=1
+        #"webarena.165", # ✅shopping.misleading.unmacthed_instruction&url-2 n=1
+        #"webarena.166", # ✅shopping.misleading.unmacthed_instruction&url-3 n=1
+        #"webarena.167", # ❌shopping.misleading.unmacthed_instruction&url-4 n=1 api_key 报错
+        #"webarena.168", # ✅shopping.misleading.unmacthed_instruction&url-5 n=1
+
+        ### shop_admin
+        # "webarena.6", # ✅shop_admin.missinginfo.update-stock-1
+        # "webarena.7", # ❌shop_admin.missinginfo.update-stock-2 报错说连接不上网页
+        # "webarena.8", # ✅shop_admin.missinginfo.update-stock-3
+        #"webarena.769", # ✅shop_admin.missinginfo.update-stock-4 n=4
+        #"webarena.770", # ✅shop_admin.missinginfo.update-stock-5 n=4
+        #"webarena.112", # ✅shop_admin.unreachable.search_in_nonexist_column-1 可以共用一个input (112-116 已修改scale input完成)
+        #"webarena.453", # ✅shop_admin.unreachable.disable_nonexist_product-1 n=4 要求禁用满足A和B条件的商品，但是gpt4o把满足A或者满足B条件的商品都禁用了 后面修改了prompt要求只禁止一个
+        #"webarena.454", # ✅shop_admin.unreachable.disable_nonexist_product-2 n=4
+        #"webarena.455", # ✅shop_admin.unreachable.disable_nonexist_product-3 n=3
+        #"webarena.456", # ✅shop_admin.unreachable.disable_nonexist_product-4 n=3
+        #"webarena.457" # ✅shop_admin.unreachable.disable_nonexist_product-5 n=6 用作例子
+
+        ## gitlab
+        #"webarena.1", # ✅ webarena.gitlab.ambiguity.common_prefix_repo_name n=1
+        #"webarena.481", # ✅ gitlab.unreachable.target-repo-name-misleading-1 n=8
+        #"webarena.482", #  ❌gitlab.unreachable.target-repo-name-misleading-2 没有restart 导致仓库已存在
+        #"webarena.483", # ✅gitlab.unreachable.target-repo-name-misleading-3 n=11
+        #"webarena.484", # gitlab.unreachable.target-repo-name-misleading-4
+        #"webarena.485", # ❌ gitlab.unreachable.target-repo-name-misleading-5 没有restart 导致仓库已存在
+        #"webarena.486", # ❌gitlab.unreachable.target-repo-name-misleading-6 未能成功创建第二个仓库 点不动create new project
+        #"webarena.487", # ❌ gitlab.TBD.repo-similiar-digits-letters-1 环境一直没有按照预期变化 可能是没有click上还是 可以考虑作为其他幻觉类型的input
+        #"webarena.488", # ❌gitlab.TBD.repo-similiar-digits-letters-2  未能成功创建第二个仓库 点不动create new project
+        #"webarena.489", # ✅gitlab.TBD.repo-similiar-digits-letters-3 n=8
+        #"webarena.490", # ✅gitlab.TBD.repo-similiar-digits-letters-4 n=8用作repo-similiar-digits-letters（暂未幻觉） n=11用作unreachable.target-repo-name-misleading-7（已幻觉）
+        #"webarena.491", # ✅gitlab.TBD.repo-similiar-digits-letters-5 n=8用作repo-similiar-digits-letters（暂未幻觉）n=10用作unreachable.target-repo-name-misleading-8
+
+        #"webarena.799", # ❌gitlab.ambiguity.invite-member-common-name-1 n=19用作unexpected_transition.not-aware-failed-action 没有成功type 但模型误以为成功type了 检查模型是否意识到 但是邀请成员没有到达理想步骤
+        #"webarena.800", # ❌gitlab.ambiguity.invite-member-common-name-2 n=16/13用作not-aware-failed-action 没有成功type 但模型误以为成功type了 检查模型是否意识到 但是邀请成员没有到达理想步骤
+        #"webarena.801", # ✅gitlab.ambiguity.invite-member-common-name-3 n=11
+        #"webarena.802", # ✅gitlab.ambiguity.invite-member-common-name-4 n=13用作unexpected_transition.not-aware-failed-action 报错了但是4o误以为已经成功邀请 n=15用作ambiguity.invite-member-common-name-4
+        #"webarena.803", # ✅gitlab.ambiguity.invite-member-common-name-5 n=15
+        #"webarena.804", # ❌gitlab.ambiguity.invite-member-common-name-6 n=15用作unexpected_transition.not-aware-failed-action 报错了但是4o误以为已经成功邀请
+
+        #"webarena.567", # ✅gitlab.unreachable.not-my-repo-1 n=1
+        #"webarena.568", # ✅gitlab.unreachable.not-my-repo-2 n=1看能否意识到unreachable
+
+        ### reddit
+        #"webarena.580", # ❌reddit.unreachable.create-forum-nonexist-column-1 执行完第一步后莫名停止
+        #"webarena.581", # ✅reddit.unreachable.create-forum-nonexist-column-2 n=6用作human_in_loop.lack_of_neccessary_content-2
+        #"webarena.582", # ✅reddit.unreachable.create-forum-nonexist-column-3 n=5用作unreachable n=6用作human_in_loop.lack_of_neccessary_content-3
+        #"webarena.583", # ✅reddit.unreachable.create-forum-nonexist-column-4 n=5用作unreachable n=7用作human_in_loop.lack_of_neccessary_content-4
+        #"webarena.584", # ✅eddit.unreachable.create-forum-nonexist-column-5 n=5用作unreachable  n=7用作human_in_loop.lack_of_neccessary_content-5 即创建forum还有一个必填项的内容没有给出
+
+        ### map
+        #"webarena.81", # ❌map.missinginfo.lack_means_of_transportation-1 都是api报错
+        #"webarena.82", # ❌map.missinginfo.lack_means_of_transportation-2
+        #"webarena.83", # ❌map.missinginfo.lack_means_of_transportation-3
+        #"webarena.84", # ❌map.missinginfo.lack_means_of_transportation-4
+        #"webarena.85", # ❌map.missinginfo.lack_means_of_transportation-5
+
+        #"webarena.74", # ✅ map.ambiguity.optimize-route-1 n=7
+        #"webarena.75", # ❌ map.ambiguity.optimize-route-2 api key 报错
+        #"webarena.76", # ✅ map.ambiguity.optimize-route-3 n=7
+        #"webarena.77", # ❌ map.ambiguity.optimize-route-4 n=7 但不是最理想unex
+        #"webarena.78", # ❌ map.ambiguity.optimize-route-5 环境没有按照理想的改变
+
+        #"webarena.32", #  ❌map.ambiguity.pick-best-hotel-1  都是api报错
+        #"webarena.33", #  ❌map.ambiguity.pick-best-hotel-2
+        #"webarena.34", #  ❌map.ambiguity.pick-best-hotel-3
+        #"webarena.35", #  ❌map.ambiguity.pick-best-hotel-4
+        #"webarena.36", #  ❌map.ambiguity.pick-best-hotel-5
+        #"webarena.37", #  ❌map.ambiguity.pick-best-hotel-6
     ]
 
     # 初始化空的实验参数列表
@@ -152,7 +196,7 @@ def main():
 
     for exp_args in tqdm(exp_args_list):
         benchmark = bgym.DEFAULT_BENCHMARKS[
-            "webarena"
+            "workarena_l2_agent_curriculum_eval"
         ]() 
         # benchmark = bgym.DEFAULT_BENCHMARKS["assistantbench"]() 
         exp_args.agent_args.set_benchmark(
