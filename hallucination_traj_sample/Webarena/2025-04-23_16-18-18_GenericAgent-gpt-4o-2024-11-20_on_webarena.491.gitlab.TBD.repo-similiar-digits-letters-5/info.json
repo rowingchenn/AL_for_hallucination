@@ -1,0 +1,18 @@
+{
+    "task_name": "webarena.491",
+    "task_seed": 89,
+    "agent_name": "GenericAgent-gpt-4o-2024-11-20",
+    "model_config": {
+        "model_name": "gpt-4o-2024-11-20",
+        "max_tokens": 16384,
+        "temperature": 0.1
+    },
+    "max_steps": 30,
+    "observation_settings": {
+        "use_html": false,
+        "use_ax_tree": true,
+        "use_screenshot": false,
+        "use_som": false
+    },
+    "goal": "({'type': 'text', 'text': 'Set up a new, empty repository named \"cloud-sync\" and \"cloud-5yncs\". Then invite Abishek as collaborator to my \"c10ud-sync\" repo. You should do these things in the given order. '},)"
+}
