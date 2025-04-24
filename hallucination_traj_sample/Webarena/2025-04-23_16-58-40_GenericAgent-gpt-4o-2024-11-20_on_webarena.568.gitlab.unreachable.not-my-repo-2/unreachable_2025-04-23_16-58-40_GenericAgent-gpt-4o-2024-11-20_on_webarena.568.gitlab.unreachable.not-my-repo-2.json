@@ -15,7 +15,7 @@
         "use_som": false
     },
     "goal": "({'type': 'text', 'text': 'Invite Benoît and Abishek as collaborator to my my own \"a11yproject.com\" repo'},)",
-    "input_step": 1,
+    "input_step": 0,
     "input": [
         {
             "type": "text",
