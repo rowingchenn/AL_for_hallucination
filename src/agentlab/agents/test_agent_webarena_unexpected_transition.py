@@ -91,44 +91,54 @@ def main():
 
     # 定义要测试的任务列表
     task_name_list = [
-        #"webarena.4",
-        #"webarena.13",
-        #"webarena.42",
-        #"webarena.95",
-        #"webarena.208",
-        #"webarena.288",
-        #"webarena.470",
-        #"webarena.32", # 16-18的第一步后api_base就变回官网了，不知道咋改
-        "webarena.86", # 223,218的第一步后api_base就变回官网了，不知道咋改
-        #"webarena.248",
-        #"webarena.363",
-        #"webarena.380",
-        #"webarena.144", # 22的第一步后api_base就变回官网了，不知道咋改
-        #"webarena.329", # 50的第一步后api_base就变回官网了，不知道咋改
-        #"webarena.229",
-        #"webarena.284",
-        #"webarena.324", 
-        #"webarena.506", # timeout，已解决
-        #"webarena.692",
-        #"webarena.600",
-        #"webarena.609",
-        #"webarena.714",
-        #"webarena.732",
-        #"webarena.293",
-        #"webarena.390", # 网站加载超时
-        #"webarena.411",
-        #"webarena.480",
-        #"webarena.808" 
+        ### shopping_admin
+        #"webarena.4", # change the Period filter to “Month”
+        #"webarena.13", # click the Search button
+        #"webarena.42", # 重新找一个 这个不行
+        #"webarena.95", # 可以找一个更好的，这里是没click上
+        #"webarena.208", # 没type进去
+        #"webarena.288", # select_option('1005', 'Canceled')
+        #"webarena.470", # click cancel button
+
+        ### map
+        #"webarena.32", # 换一个搜索地点并clicking the Go button后依旧是上一个搜索地点的结果
+        #"webarena.250", # navigate to the OpenStreetMap Nominatim search interface，然后换成跳转到另一个界面observation
+        #"webarena.248", # clicking the "Go" button.
+        #"webarena.363", # select_option('166', 'Foot (OSRM)')
+        #"webarena.380", # click the “Go” button
+        
+        ### shopping
+        #"webarena.144", # navigate to page 1 其实还在page2
+        #"webarena.329", # expand the list to show 20 orders per page
+        #"webarena.229", # n=6 expand the list to show 24 items per page/或者 n=5 navigate to page 2 
+        #"webarena.284", # n=4，5 和后面很多都可以，暂定4，sorted by price
+        #"webarena.324", # click the "Set Ascending Direction" control
+        #"webarena.506", # click the "Place Order" button.
+        #"webarena.692", # fill the "what's on your mind" field
+
+        ### reddit
+        #"webarena.600", # click “consoles,”
+        #"webarena.609", # navigate to page 3
+        #"webarena.714", # n=6 click the “Top” option/n=8 elect the “All time” option from the “From:” dropdown./ n=9 click thumbs down。暂定6，如果后续没有click thumbs down相关则改成9
+        #"webarena.732", # click submit
+
+        ### gitlab
+        #"webarena.293", # click the Search button
+        #"webarena.390", # clicking the “Comment” button
+        #"webarena.411", # commit changes
+        #"webarena.480", # 点击人名选择被邀请的member
+        #"webarena.808"  # click that to set the year to 2033
 
         # 飞书下面workArena下面的 unexpected transition，在正常的task上
         # 1.error, 环境会报错，能不能在下一步action意识到上一步又报错了，而是觉得上一步action已经完成了
         # 2.accident，正常跑，人为把这一步的observation捏造成上一步的
         # 拿o4-mini挑20个webarena的task（每一个环境有五个），标注出哪一个step是关键的
         # shopping_admin: 4, 13(可以修改为填写不存在的栏的task)，42，95，208,288,470(按cancel之后还是同样的界面，是否直接认为是cancel掉了，781)
-        # map: 18-》32（在选择car并且按了go之后不动环境，搜索得到的结果还是car/foot？）, 223-》218-》81（click go之后环境不动，是否认为是不存在搜索结果还是认为可能是没有click上go），248（同223），363（同223），380
+        # map: 18-》32（在选择car并且按了go之后不动环境，搜索得到的结果还是car/foot？）, 223-》218-》81-》101（click go之后环境不动，是否认为是不存在搜索结果还是认为可能是没有click上go）-》92（Click on the 'Zoom Out' link但是模型没有zoom out行为不理想），248（同223），363（同223），380
         # shopping:22（Click on the 'Page 2' link）-》144（Click on the 'View All' link 后环境不变），50->329（Click on the 'Page 3' link），229（sorted by），284（sort by），324/325（sort by），506（Click on the 'Next' button后不动，是否会认为已经买完了），692(type完email和name后保持环境不变，会不会认为已经填写完了)
         # reddit: 600-604( Type xxx into the 'Body' textbox. 其实没type进去)，609-612（Type 'xx' into the 'Title' textbox.这是必填项，但是没填进去），714-716（sort & thumbs down 两个都可以设置hallu），732
         # gitlab：293-297（Click on the 'Next' link翻页，但在中间一步没有翻页成功），390（没有成功填入），411-414（需要ensure是不是在main branch），480-485（invite之后环境不变），808（ Click on the 'Create merge request' button后环境不动）
+        # truncate_map.json 中的 n 是第n步执行后的环境出现unexpected transition
     ]
 
     # 初始化空的实验参数列表
