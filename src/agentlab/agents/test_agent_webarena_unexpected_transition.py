@@ -25,7 +25,7 @@ os.environ["WA_GITLAB"] = "http://111.229.174.217:19001"
 os.environ["WA_WIKIPEDIA"] = "http://111.229.174.217:19003"
 os.environ["WA_MAP"] = "http://111.229.174.217:1443"
 os.environ["WA_HOMEPAGE"] = "http://111.229.174.217:18081"
-#os.environ["WA_FULL_RESET"] = "http://111.229.174.217:17565" # /satus 访问不了，因此暂时跳过
+# os.environ["WA_FULL_RESET"] = "http://111.229.174.217:17565" # /satus 访问不了，因此暂时跳过
 os.environ["WA_FULL_RESET"] = ""
 
 FLAGS_TEST = GenericPromptFlags(
@@ -35,15 +35,15 @@ FLAGS_TEST = GenericPromptFlags(
         use_focused_element=True,
         use_error_logs=True,
         use_history=True,
-        use_past_error_logs=False,
+        use_past_error_logs=True,
         use_action_history=True,
         use_think_history=True,
         use_diff=False,
         html_type="pruned_html",
         use_screenshot=False,
         use_som=False,
-        extract_visible_tag=True,
-        extract_clickable_tag=False,
+        extract_visible_tag=False,
+        extract_clickable_tag=True,
         extract_coords="False",
         filter_visible_elements_only=False,
     ),
@@ -70,9 +70,9 @@ FLAGS_TEST = GenericPromptFlags(
 )
 
 AGENT_TEST = GenericAgentArgs(
-    #chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
-    #chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
-    #chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
     chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
@@ -92,43 +92,38 @@ def main():
     # 定义要测试的任务列表
     task_name_list = [
         ### shopping_admin
-        #"webarena.4", # change the Period filter to “Month”
-        #"webarena.13", # click the Search button
-        #"webarena.42", # 重新找一个 这个不行
-        #"webarena.95", # 可以找一个更好的，这里是没click上
-        #"webarena.208", # 没type进去
-        #"webarena.288", # select_option('1005', 'Canceled')
-        #"webarena.470", # click cancel button
-
+        # "webarena.4", # change the Period filter to “Month”
+        # "webarena.13", # click the Search button
+        # "webarena.42", # 重新找一个 这个不行
+        # "webarena.95", # 可以找一个更好的，这里是没click上
+        # "webarena.208", # 没type进去
+        # "webarena.288", # select_option('1005', 'Canceled')
+        # "webarena.470", # click cancel button
         ### map
-        #"webarena.32", # 换一个搜索地点并clicking the Go button后依旧是上一个搜索地点的结果
-        #"webarena.250", # navigate to the OpenStreetMap Nominatim search interface，然后换成跳转到另一个界面observation
-        #"webarena.248", # clicking the "Go" button.
-        #"webarena.363", # select_option('166', 'Foot (OSRM)')
-        #"webarena.380", # click the “Go” button
-        
+        # "webarena.32", # 换一个搜索地点并clicking the Go button后依旧是上一个搜索地点的结果
+        # "webarena.250", # navigate to the OpenStreetMap Nominatim search interface，然后换成跳转到另一个界面observation
+        # "webarena.248", # clicking the "Go" button.
+        # "webarena.363", # select_option('166', 'Foot (OSRM)')
+        # "webarena.380", # click the “Go” button
         ### shopping
-        #"webarena.144", # navigate to page 1 其实还在page2
-        #"webarena.329", # expand the list to show 20 orders per page
-        #"webarena.229", # n=6 expand the list to show 24 items per page/或者 n=5 navigate to page 2 
-        #"webarena.284", # n=4，5 和后面很多都可以，暂定4，sorted by price
-        #"webarena.324", # click the "Set Ascending Direction" control
-        #"webarena.506", # click the "Place Order" button.
-        #"webarena.692", # fill the "what's on your mind" field
-
+        # "webarena.144", # navigate to page 1 其实还在page2
+        # "webarena.329", # expand the list to show 20 orders per page
+        # "webarena.229", # n=6 expand the list to show 24 items per page/或者 n=5 navigate to page 2
+        # "webarena.284", # n=4，5 和后面很多都可以，暂定4，sorted by price
+        # "webarena.324", # click the "Set Ascending Direction" control
+        # "webarena.506", # click the "Place Order" button.
+        # "webarena.692", # fill the "what's on your mind" field
         ### reddit
-        #"webarena.600", # click “consoles,”
-        #"webarena.609", # navigate to page 3
-        #"webarena.714", # n=6 click the “Top” option/n=8 elect the “All time” option from the “From:” dropdown./ n=9 click thumbs down。暂定6，如果后续没有click thumbs down相关则改成9
-        #"webarena.732", # click submit
-
+        # "webarena.600", # click “consoles,”
+        # "webarena.609", # navigate to page 3
+        # "webarena.714", # n=6 click the “Top” option/n=8 elect the “All time” option from the “From:” dropdown./ n=9 click thumbs down。暂定6，如果后续没有click thumbs down相关则改成9
+        # "webarena.732", # click submit
         ### gitlab
-        #"webarena.293", # click the Search button
-        #"webarena.390", # clicking the “Comment” button
-        #"webarena.411", # commit changes
-        #"webarena.480", # 点击人名选择被邀请的member
-        #"webarena.808"  # click that to set the year to 2033
-
+        # "webarena.293", # click the Search button
+        # "webarena.390", # clicking the “Comment” button
+        # "webarena.411", # commit changes
+        # "webarena.480", # 点击人名选择被邀请的member
+        # "webarena.808"  # click that to set the year to 2033
         # 飞书下面workArena下面的 unexpected transition，在正常的task上
         # 1.error, 环境会报错，能不能在下一步action意识到上一步又报错了，而是觉得上一步action已经完成了
         # 2.accident，正常跑，人为把这一步的observation捏造成上一步的
@@ -151,7 +146,7 @@ def main():
             task_seed=89,
             max_steps=30,
             headless=True,  # 如果在自己电脑上跑可以设置成 true
-            #timeout=30000,
+            # timeout=30000,
         )
 
         # 特殊处理 openended 任务 可以自己操作 来处理human in the loop场景
@@ -170,10 +165,8 @@ def main():
         )
 
     for exp_args in tqdm(exp_args_list):
-        benchmark = bgym.DEFAULT_BENCHMARKS[
-            "webarena"
-        ]() 
-        # benchmark = bgym.DEFAULT_BENCHMARKS["assistantbench"]() 
+        benchmark = bgym.DEFAULT_BENCHMARKS["webarena"]()
+        # benchmark = bgym.DEFAULT_BENCHMARKS["assistantbench"]()
         exp_args.agent_args.set_benchmark(
             benchmark, demo_mode=True
         )  # Override Some flags based on the benchmark.
