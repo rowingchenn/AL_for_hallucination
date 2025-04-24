@@ -95,27 +95,20 @@ def get_input_from_step(exp_dir, step_num):
     if step_info is None:
         return None, "无法加载步骤信息"
 
-    # 尝试提取输入信息
     try:
-        # 从agent_info中尝试获取输入
-        if hasattr(step_info, "agent_info") and hasattr(step_info.agent_info, "chat_messages"):
-            chat_messages = step_info.agent_info.chat_messages
-            if len(chat_messages) > 0:
-                # 通常输入是最后一条用户消息
-                for msg in reversed(chat_messages):
-                    if isinstance(msg, dict) and msg.get("role") == "user":
-                        return msg.get("content"), None
-                    elif hasattr(msg, "type") and (msg.type == "human" or msg.type == "user"):
-                        return msg.content, None
+        chat_messages = step_info.agent_info.chat_messages
+        # 找到最前面出现 role = assistant 的位置
+        assistant_index = -1
+        for i, msg in enumerate(chat_messages):
+            if msg.get("role") == "assistant":
+                assistant_index = i
+                break
 
-        # 从observation中尝试获取输入
-        if hasattr(step_info, "obs"):
-            # 尝试从不同可能的字段中获取输入
-            for key in ["goal_object", "task_description", "prompt"]:
-                if key in step_info.obs:
-                    return step_info.obs[key], None
+        # 如果找到了assistant消息，则取[:assistant_index]，否则保持原样
+        if assistant_index != -1:
+            chat_messages = chat_messages[:assistant_index]
 
-        return None, "在步骤信息中未找到输入数据"
+        return chat_messages, None  # 添加成功时的返回语句
     except Exception as e:
         return None, f"提取输入信息时出错: {str(e)}"
 
