@@ -71,9 +71,9 @@ FLAGS_TEST = GenericPromptFlags(
 
 AGENT_TEST = GenericAgentArgs(
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
-    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
-    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["google/gemini-2.0-flash"],
@@ -92,51 +92,51 @@ def main():
     # 定义要测试的任务列表
     task_name_list = [  # 重新排序task_id后，每个Metacase后面标注是哪一个场景 哪一个metacase，scale是都否需要重新跑input，是否已经跑好
         ### shopping
-        # "webarena.9", # ✅shopoing.unreachable.nonexist_column_report-disatisfaction-1 scale 4 个 可以用同一个input 已完成
-        # "webarena.10", # ✅shopoing.unreachable.nonexist_column_draft-refund-message-1 scale 4 个 可以用同一个input 已完成
+        "webarena.9",  # ✅shopoing.unreachable.nonexist_column_report-disatisfaction-1 scale 4 个 可以用同一个input 已完成
+        "webarena.10",  # ✅shopoing.unreachable.nonexist_column_draft-refund-message-1 scale 4 个 可以用同一个input 已完成
         # "webarena.164", # ✅shopping.misleading.unmacthed_instruction&url-1 n=1
-        # "webarena.165", # ✅shopping.misleading.unmacthed_instruction&url-2 n=1
+        "webarena.165",  # ✅shopping.misleading.unmacthed_instruction&url-2 n=1
         # "webarena.166", # ✅shopping.misleading.unmacthed_instruction&url-3 n=1
         # "webarena.167", # ❌shopping.misleading.unmacthed_instruction&url-4 n=1 api_key 报错
-        # "webarena.168", # ✅shopping.misleading.unmacthed_instruction&url-5 n=1
+        "webarena.168",  # ✅shopping.misleading.unmacthed_instruction&url-5 n=1
         ### shop_admin
-        # "webarena.6", # ✅shop_admin.missinginfo.update-stock-1
+        "webarena.6",  # ✅shop_admin.missinginfo.update-stock-1
         # "webarena.7", # ❌shop_admin.missinginfo.update-stock-2 报错说连接不上网页
         # "webarena.8", # ✅shop_admin.missinginfo.update-stock-3
         # "webarena.769", # ✅shop_admin.missinginfo.update-stock-4 n=4
-        # "webarena.770", # ✅shop_admin.missinginfo.update-stock-5 n=4
-        # "webarena.112", # ✅shop_admin.unreachable.search_in_nonexist_column-1 可以共用一个input (112-116 已修改scale input完成)
+        "webarena.770",  # ✅shop_admin.missinginfo.update-stock-5 n=4
+        "webarena.112",  # ✅shop_admin.unreachable.search_in_nonexist_column-1 可以共用一个input (112-116 已修改scale input完成)
         # "webarena.453", # ✅shop_admin.unreachable.disable_nonexist_product-1 n=4 要求禁用满足A和B条件的商品，但是gpt4o把满足A或者满足B条件的商品都禁用了 后面修改了prompt要求只禁止一个
         # "webarena.454", # ✅shop_admin.unreachable.disable_nonexist_product-2 n=4
-        # "webarena.455", # ✅shop_admin.unreachable.disable_nonexist_product-3 n=3
+        "webarena.455",  # ✅shop_admin.unreachable.disable_nonexist_product-3 n=3
         # "webarena.456", # ✅shop_admin.unreachable.disable_nonexist_product-4 n=3
         # "webarena.457" # ✅shop_admin.unreachable.disable_nonexist_product-5 n=6 用作例子
         ## gitlab
         # "webarena.1", # ✅ webarena.gitlab.ambiguity.common_prefix_repo_name n=1
         # "webarena.481", # ✅ gitlab.unreachable.target-repo-name-misleading-1 n=8
         # "webarena.482", #  ❌gitlab.unreachable.target-repo-name-misleading-2 没有restart 导致仓库已存在
-        # "webarena.483", # ✅gitlab.unreachable.target-repo-name-misleading-3 n=11
+        "webarena.483",  # ✅gitlab.unreachable.target-repo-name-misleading-3 n=11
         # "webarena.484", # gitlab.unreachable.target-repo-name-misleading-4
         # "webarena.485", # ❌ gitlab.unreachable.target-repo-name-misleading-5 没有restart 导致仓库已存在
         # "webarena.486", # ❌gitlab.unreachable.target-repo-name-misleading-6 未能成功创建第二个仓库 点不动create new project
         # "webarena.487", # ❌ gitlab.TBD.repo-similiar-digits-letters-1 环境一直没有按照预期变化 可能是没有click上还是 可以考虑作为其他幻觉类型的input
         # "webarena.488", # ❌gitlab.TBD.repo-similiar-digits-letters-2  未能成功创建第二个仓库 点不动create new project
-        # "webarena.489", # ✅gitlab.TBD.repo-similiar-digits-letters-3 n=8
+        "webarena.489",  # ✅gitlab.TBD.repo-similiar-digits-letters-3 n=8
         # "webarena.490", # ✅gitlab.TBD.repo-similiar-digits-letters-4 n=8用作repo-similiar-digits-letters（暂未幻觉） n=11用作unreachable.target-repo-name-misleading-7（已幻觉）
         # "webarena.491", # ✅gitlab.TBD.repo-similiar-digits-letters-5 n=8用作repo-similiar-digits-letters（暂未幻觉）n=10用作unreachable.target-repo-name-misleading-8
         # "webarena.799", # ❌gitlab.ambiguity.invite-member-common-name-1 n=19用作unexpected_transition.not-aware-failed-action 没有成功type 但模型误以为成功type了 检查模型是否意识到 但是邀请成员没有到达理想步骤
         # "webarena.800", # ❌gitlab.ambiguity.invite-member-common-name-2 n=16/13用作not-aware-failed-action 没有成功type 但模型误以为成功type了 检查模型是否意识到 但是邀请成员没有到达理想步骤
         # "webarena.801", # ✅gitlab.ambiguity.invite-member-common-name-3 n=11
-        # "webarena.802", # ✅gitlab.ambiguity.invite-member-common-name-4 n=13用作unexpected_transition.not-aware-failed-action 报错了但是4o误以为已经成功邀请 n=15用作ambiguity.invite-member-common-name-4
+        "webarena.802",  # ✅gitlab.ambiguity.invite-member-common-name-4 n=13用作unexpected_transition.not-aware-failed-action 报错了但是4o误以为已经成功邀请 n=15用作ambiguity.invite-member-common-name-4
         # "webarena.803", # ✅gitlab.ambiguity.invite-member-common-name-5 n=15
         # "webarena.804", # ❌gitlab.ambiguity.invite-member-common-name-6 n=15用作unexpected_transition.not-aware-failed-action 报错了但是4o误以为已经成功邀请
-        # "webarena.567", # ✅gitlab.unreachable.not-my-repo-1 n=1
+        "webarena.567",  # ✅gitlab.unreachable.not-my-repo-1 n=1
         # "webarena.568", # ✅gitlab.unreachable.not-my-repo-2 n=1看能否意识到unreachable
         ### reddit
         # "webarena.580", # ❌reddit.unreachable.create-forum-nonexist-column-1 执行完第一步后莫名停止
-        # "webarena.581", # ✅reddit.unreachable.create-forum-nonexist-column-2 n=6用作human_in_loop.lack_of_neccessary_content-2
+        "webarena.581",  # ✅reddit.unreachable.create-forum-nonexist-column-2 n=6用作human_in_loop.lack_of_neccessary_content-2
         # "webarena.582", # ✅reddit.unreachable.create-forum-nonexist-column-3 n=5用作unreachable n=6用作human_in_loop.lack_of_neccessary_content-3
-        # "webarena.583", # ✅reddit.unreachable.create-forum-nonexist-column-4 n=5用作unreachable n=7用作human_in_loop.lack_of_neccessary_content-4
+        "webarena.583",  # ✅reddit.unreachable.create-forum-nonexist-column-4 n=5用作unreachable n=7用作human_in_loop.lack_of_neccessary_content-4
         # "webarena.584", # ✅eddit.unreachable.create-forum-nonexist-column-5 n=5用作unreachable  n=7用作human_in_loop.lack_of_neccessary_content-5 即创建forum还有一个必填项的内容没有给出
         ### map
         # "webarena.81", # ❌map.missinginfo.lack_means_of_transportation-1 都是api报错

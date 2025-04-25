@@ -252,8 +252,38 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
     # 判断是单个步骤还是多个步骤
     if isinstance(steps_data, list):
         # 多个步骤的情况
+        # 过滤连续的相同action步骤，确保连续不超过2个
+        filtered_steps = []
+        last_action = None
+        last_action_str = None
+        consecutive_count = 0
+
+        for step_num in sorted(steps_data):
+            action, error = get_action_from_step(exp_dir, step_num)
+            action_str = str(action) if action is not None else None
+
+            if action_str == last_action_str:
+                consecutive_count += 1
+                if consecutive_count <= 2:  # 允许最多连续2个相同action
+                    filtered_steps.append(step_num)
+            else:
+                consecutive_count = 1
+                filtered_steps.append(step_num)
+
+            last_action_str = action_str
+
+        if not options.quiet:
+            if len(filtered_steps) < len(steps_data):
+                print(f"原始步骤: {steps_data}")
+                print(
+                    f"过滤后步骤: {filtered_steps}（已移除{len(steps_data) - len(filtered_steps)}个连续相同action的步骤）"
+                )
+            else:
+                print(f"所有步骤都保留: {filtered_steps}")
+
+        # 使用过滤后的步骤
         success_count = 0
-        for i, step_num in enumerate(steps_data):
+        for step_num in filtered_steps:
             # 生成带有步骤编号的后缀
             suffix = f"_S{step_num}"
             if generate_info_json_for_step(exp_dir, exp_args, options, step_num, suffix):
@@ -387,7 +417,15 @@ def main():
                 success_count += 1
                 # 计算生成的文件数量
                 if isinstance(truncate_map[exp_dir_name], list):
-                    total_files_generated += len(truncate_map[exp_dir_name])
+                    # 这里需要修改，因为我们现在过滤了一些步骤
+                    # 查找当前目录下以特定后缀命名的文件数量来计算实际生成的文件数量
+                    pattern = options.output_filename.replace(".json", "_S*.json")
+                    matching_files = [
+                        f
+                        for f in os.listdir(exp_dir)
+                        if f.startswith(os.path.basename(pattern.replace("*", "")))
+                    ]
+                    total_files_generated += len(matching_files)
                 else:
                     total_files_generated += 1
 

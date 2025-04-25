@@ -198,7 +198,7 @@ if __name__ == "__main__":
     )
 
     # 错误映射文件路径
-    error_map_file = "/home/weichenzhang/hallucination/AL_for_hallucination/hallucination_traj_sample/WorkArena/error_transition_truncate_map.json"
+    error_map_file = os.path.join(trajectories_dir, "error_transition_truncate_map.json")
 
     # 确保目标目录存在
     os.makedirs(move_to_dir, exist_ok=True)

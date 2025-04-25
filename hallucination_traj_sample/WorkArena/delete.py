@@ -17,7 +17,7 @@ def delete_info_json_files(directory):
     for root, dirs, files in os.walk(directory):
         for file in files:
             if (
-                "info" in file.lower()
+                "__s" in file.lower()
                 and file.lower().endswith(".json")
                 and file != "summary_info.json"
             ):

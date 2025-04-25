@@ -171,3 +171,7 @@ results/
 
 # test_results
 src/agentlab/agents/test_results/
+
+src/agentlab/agents/test_results_webarena_unexpected_transition/
+
+src/agentlab/agents/webarena
