@@ -139,22 +139,24 @@ def main():
         # "webarena.583", # ✅reddit.unreachable.create-forum-nonexist-column-4 n=5用作unreachable n=7用作human_in_loop.lack_of_neccessary_content-4
         # "webarena.584", # ✅eddit.unreachable.create-forum-nonexist-column-5 n=5用作unreachable  n=7用作human_in_loop.lack_of_neccessary_content-5 即创建forum还有一个必填项的内容没有给出
         ### map
-        # "webarena.81", # ❌map.missinginfo.lack_means_of_transportation-1 都是api报错
-        # "webarena.82", # ❌map.missinginfo.lack_means_of_transportation-2
-        # "webarena.83", # ❌map.missinginfo.lack_means_of_transportation-3
-        # "webarena.84", # ❌map.missinginfo.lack_means_of_transportation-4
-        # "webarena.85", # ❌map.missinginfo.lack_means_of_transportation-5
-        # "webarena.74", # ✅ map.ambiguity.optimize-route-1 n=7
-        # "webarena.75", # ❌ map.ambiguity.optimize-route-2 api key 报错
-        # "webarena.76", # ✅ map.ambiguity.optimize-route-3 n=7
-        # "webarena.77", # ❌ map.ambiguity.optimize-route-4 n=7 但不是最理想unex
-        # "webarena.78", # ❌ map.ambiguity.optimize-route-5 环境没有按照理想的改变
-        # "webarena.32", #  ❌map.ambiguity.pick-best-hotel-1  都是api报错
-        # "webarena.33", #  ❌map.ambiguity.pick-best-hotel-2
-        # "webarena.34", #  ❌map.ambiguity.pick-best-hotel-3
-        # "webarena.35", #  ❌map.ambiguity.pick-best-hotel-4
-        # "webarena.36", #  ❌map.ambiguity.pick-best-hotel-5
-        # "webarena.37", #  ❌map.ambiguity.pick-best-hotel-6
+        #"webarena.81", # ❌map.missinginfo.lack_means_of_transportation-1 都是api报错 n=0合适（在读题时就意识到ambiguity）还是n=后续搜索第二个地点到三个地点的时候看是否确定是walk还是car（无论选哪一个都是幻觉）
+        #"webarena.82", # ❌map.missinginfo.lack_means_of_transportation-2
+        #"webarena.83", # ❌map.missinginfo.lack_means_of_transportation-3
+        #"webarena.84", # ❌map.missinginfo.lack_means_of_transportation-4
+        #"webarena.85", # ❌map.missinginfo.lack_means_of_transportation-5
+
+        #"webarena.74", # ✅ map.ambiguity.optimize-route-1 n=7 搜索2->3路线的click动作 但是应该n=0直接看模型是不是意识到optimal的ambiguity
+        #"webarena.75", # ❌ map.ambiguity.optimize-route-2 api key 报错
+        #"webarena.76", # ✅ map.ambiguity.optimize-route-3 n=7
+        #"webarena.77", # ❌ map.ambiguity.optimize-route-4 n=7 但不是最理想unex
+        #"webarena.78", # ❌ map.ambiguity.optimize-route-5 环境没有按照理想的改变
+
+        #"webarena.32", #  ❌map.ambiguity.pick-best-hotel-1  都是api报错
+        #"webarena.33", #  ❌map.ambiguity.pick-best-hotel-2
+        #"webarena.34", #  ❌map.ambiguity.pick-best-hotel-3
+        #"webarena.35", #  ❌map.ambiguity.pick-best-hotel-4
+        #"webarena.36", #  ❌map.ambiguity.pick-best-hotel-5
+        #"webarena.37", #  ❌map.ambiguity.pick-best-hotel-6
     ]
 
     # 初始化空的实验参数列表
