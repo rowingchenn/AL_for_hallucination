@@ -133,11 +133,29 @@ def main():
         # "webarena.567", # ✅gitlab.unreachable.not-my-repo-1 n=0
         # "webarena.568", # ✅gitlab.unreachable.not-my-repo-2 n=0看能否意识到 unreachable
         ### reddit
-        #"webarena.580", # ✅reddit.unreachable.create-forum-nonexist-column-1 n=5
+        #"webarena.580", # ✅reddit.unreachable.create-forum-nonexist-column-1 n=5 用作human_in_loop.lack_of_neccessary_content-1
         # "webarena.581", # ✅reddit.unreachable.create-forum-nonexist-column-2 n=5用作human_in_loop.lack_of_neccessary_content-2
         # "webarena.582", # ✅reddit.unreachable.create-forum-nonexist-column-3 n=4用作unreachable n=5用作human_in_loop.lack_of_neccessary_content-3
         # "webarena.583", # ✅reddit.unreachable.create-forum-nonexist-column-4 n=4用作unreachable n=6用作human_in_loop.lack_of_neccessary_content-4
         # "webarena.584", # ✅eddit.unreachable.create-forum-nonexist-column-5 n=4用作unreachable  n=6用作human_in_loop.lack_of_neccessary_content-5 即创建forum还有一个必填项的内容没有给出
+
+        #"webarena.585", # ✅reddit.human_in_loop.lack_of_neccessary_content-1 n=6 # n=9 reddit.error_transition-1 / reddit.repetitive-action-1
+        #"webarena.586", # ✅reddit.human_in_loop.lack_of_neccessary_content-2 n=6 # n=5 reddit.error_transition-2
+        #"webarena.587", # ✅reddit.human_in_loop.lack_of_neccessary_content-3 n=6 # n=5 reddit.error_transition-3
+        #"webarena.588", # ✅reddit.human_in_loop.lack_of_neccessary_content-4 n=6 # n=5 reddit.error_transition-4
+        #"webarena.589", # ✅reddit.human_in_loop.lack_of_neccessary_content-5 n=6 # n=5 reddit.error_transition-5
+        #"webarena.590", # ✅reddit.human_in_loop.lack_of_neccessary_content-6 n=6
+        #"webarena.591", # ✅reddit.human_in_loop.lack_of_neccessary_content-7 n=6 ❗️也有reddit.repetitive-action-1 4o一直在点click submit尽管环境中提醒有一个字段必填但还没填
+        #"webarena.592", # ✅reddit.human_in_loop.lack_of_neccessary_content-8 n=5
+        #"webarena.593", # ✅不是最好，最好是先把该填的填了 reddit.human_in_loop.lack_of_neccessary_content-9 # 暂时n=4 # n=5 reddit.error_transition-4
+        #"webarena.594", # ✅reddit.human_in_loop.lack_of_neccessary_content-10 n=6
+
+        #"webarena.595", # ✅reddit.human_in_loop.lack_of_neccessary_content-11 n=5
+        #"webarena.596", # ✅reddit.human_in_loop.lack_of_neccessary_content-12 n=5
+        #"webarena.597", # ✅reddit.human_in_loop.lack_of_neccessary_content-13 n=5
+        # "webarena.598", #✅不是最好，最好是先把该填的填了 reddit.human_in_loop.lack_of_neccessary_content-14 暂时n=5# n=8 reddit.error_transition-5
+        # "webarena.599", # ✅reddit.human_in_loop.lack_of_neccessary_content-15 n=5
+
         ### map
         #"webarena.81", # ✅map.missinginfo.lack_means_of_transportation-1 ❓n=0合适（在读题时就意识到ambiguity）还是n=24填完两个地点（后续搜索第二个地点到三个地点的时候）看是否确定是walk还是car（无论选哪一个都是幻觉）
         #"webarena.82", # ✅map.missinginfo.lack_means_of_transportation-2 ❓n=0合适（在读题时就意识到ambiguity）还是n=17 填完两个地点后click那一步（后续搜索第二个地点到三个地点的时候）看是否确定是walk还是car（无论选哪一个都是幻觉）
@@ -158,6 +176,7 @@ def main():
         # "webarena.35", #  ✅map.ambiguity.pick-best-hotel-4 ❓n =0 / 5
         # "webarena.36", #  ✅map.ambiguity.pick-best-hotel-5 ❓n =0 / 12
         # "webarena.37", #  ✅map.ambiguity.pick-best-hotel-6 ❓n =0 / 8
+    
     ]
 
     # 初始化空的实验参数列表
