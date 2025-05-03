@@ -71,10 +71,10 @@ FLAGS_TEST = GenericPromptFlags(
 
 AGENT_TEST = GenericAgentArgs(
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
-    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
+    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
-    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["google/gemini-2.0-flash"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-mini-2024-09-12"],
@@ -111,6 +111,16 @@ def main():
         # "webarena.455", # ✅shop_admin.unreachable.disable_nonexist_product-3 n=2
         # "webarena.456", # ✅shop_admin.unreachable.disable_nonexist_product-4 n=2
         # "webarena.457" # ✅shop_admin.unreachable.disable_nonexist_product-5 n=5 用作例子
+        "webarena.491", # ❌shop_admin.unreachable.notify_nonexist_order-1 n
+        #"webarena.492", # shop_admin.unreachable.notify_nonexist_order-2 n=19
+        #"webarena.493", # shop_admin.unreachable.notify_nonexist_order-3 n=8
+        #"webarena.494", # shop_admin.unreachable.notify_nonexist_order-4 n=19
+        #"webarena.495", # shop_admin.unreachable.notify_nonexist_order-5 n=19
+        #"webarena.496", # shop_admin.unreachable.notify_nonexist_order-6 n=19
+        #"webarena.497", # shop_admin.unreachable.notify_nonexist_order-7 n=14
+        #"webarena.499", # shop_admin.unreachable.notify_nonexist_order-9 n=19
+        #"webarena.500", # shop_admin.unreachable.notify_nonexist_order-10 n=9
+        #3333"webarena.501", # shop_admin.unreachable.notify_nonexist_order-11 n=19
         ## gitlab
         # "webarena.1", # ✅ webarena.gitlab.ambiguity.common_prefix_repo_name n=0
         # "webarena.481", # ✅ gitlab.unreachable.target-repo-name-misleading-1 n=7

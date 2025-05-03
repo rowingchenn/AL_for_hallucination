@@ -32,5 +32,6 @@
     "2025-04-23_16-30-25_GenericAgent-gpt-4o-2024-11-20_on_webarena.799.gitlab.unexpected_transition.not-aware-failed-action-1": 18,
     "2025-04-23_16-35-24_GenericAgent-gpt-4o-2024-11-20_on_webarena.800.gitlab.unexpected_transition.not-aware-failed-action-2": 15,
     "2025-04-23_16-43-06_GenericAgent-gpt-4o-2024-11-20_on_webarena.802.gitlab.unexpected_transition.not-aware-failed-action-3": 12,
-    "2025-04-23_16-54-57_GenericAgent-gpt-4o-2024-11-20_on_webarena.804.gitlab.unexpected_transition.not-aware-failed-action-4": 14
+    "2025-04-23_16-54-57_GenericAgent-gpt-4o-2024-11-20_on_webarena.804.gitlab.unexpected_transition.not-aware-failed-action-4": 14,
+    "2025-04-27_11-10-11_GenericAgent-o4-mini-2025-04-16_on_webarena.115.shop_admin.unexpected_transition.search_timeout_error-1": 4
 }

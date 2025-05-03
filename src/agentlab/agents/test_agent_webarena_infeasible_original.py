@@ -73,7 +73,7 @@ AGENT_TEST = GenericAgentArgs(
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-mini-2024-07-18"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o3-mini-2025-01-31"],
-    # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
+    #chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-4o-2024-11-20"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o1-2024-12-17"],
     chat_model_args=CHAT_MODEL_ARGS_DICT["openai/o4-mini-2025-04-16"],
     # chat_model_args=CHAT_MODEL_ARGS_DICT["google/gemini-2.0-flash"],
@@ -87,46 +87,45 @@ AGENT_TEST = GenericAgentArgs(
 
 
 def main():
-    exp_dir = "./test_results_webarena_unexpected_transition/"
+    exp_dir = "./test_results_webarena_original_infeasible/"
 
     # 定义要测试的任务列表
     task_name_list = [
-        "webarena.22",
-        "webarena.24",
-        "webarena.101",
-        "webarena.115",
-        "webarena.166",
-        "webarena.168",
-        "webarena.183", # ❌
-        "webarena.191",
-        "webarena.201",
-        "webarena.218",
-        "webarena.219",
-        "webarena.225",
-        "webarena.234",
-        "webarena.235",
-        "webarena.247",
-        "webarena.253",
-        "webarena.301",
-        "webarena.302",
-        "webarena.313",
-        "webarena.368",
-        "webarena.376",
-        "webarena.382",
-        "webarena.491",
-        "webarena.723",
-        "webarena.726",
-        "webarena.783",
-        "webarena.789",
-        "webarena.790",
-        "webarena.791",
-        "webarena.792",
-        "webarena.793",
-        "webarena.794",
-        "webarena.795",
-        "webarena.796",
-        "webarena.797",
-        "webarena.798",
+        #"webarena.22",
+        #"webarena.24",
+        #"webarena.101",
+        #"webarena.115",
+        #"webarena.166",
+        #"webarena.168",
+        #"webarena.183", # ❌ # o1没幻觉，但还是不行 待定 感觉task不好
+        #"webarena.191",
+        #"webarena.201",
+        #"webarena.218", # ❌ 不够好 
+        #"webarena.219", # ❌ 不够好 # n = 11 ✅
+        # "webarena.225", # repetitive_action-9 n=5
+        # "webarena.234", # repetitive_action-10 n=14
+        #"webarena.235", # ❌ o1❌
+        # "webarena.247",
+        #"webarena.253", # ❓ 4o n=6 还是 o4-mini-task16 n=13
+        #"webarena.301",
+        #"webarena.302", # repetitive_action-11 n=19; repetitive_action_easier-11 n=23都是一直在navigate page1和2 不做出判断
+        #"webarena.313",
+        #"webarena.368",
+        #"webarena.376", # o1 n=6
+        #"webarena.491", # 修改了task instruction  Click on the 'Orders' link under the SALES menu to navigate to the orders page then click on the 'Filters' button to open the filter options. Then move on to try to complete the task.
+        #"webarena.723", #❌ # 虽然我感觉挺好了但是看model的thinking感觉还是不够好 # 修改 task instruction Type 'FTorrez81' into the search box to find submissions by this user.
+        #"webarena.726", # ❌ repetitive_action-12 n=25 repetitive_action_easier-12 n=27 要求只搜索人名
+        # "webarena.783", # 需要修改 n=8
+        #"webarena.789", # 可以是underspecified_missinginfo(没有给出用户名和密码) n=7; 也可以是repetitive_action-13 n=13
+        #"webarena.790", # n = 5
+        #"webarena.791", # ❌了 30 步满了还没做出判断 需要重启
+        #"webarena.792", # ❌30 步满了还不对
+        #"webarena.793", # ❌30 步满了还不对 可能需要在task里写明正确步骤
+        #"webarena.794", # n = 3✅ 就可以判断不可以change address after the order is placed
+        #"webarena.795", # repetitive_action-14， n = 3 ✅
+        #"webarena.796", # ✅n = 2 就可以判断不可以change address after the order is placed
+        #"webarena.797", # ✅n = 2 就可以判断不可以change address after the order is placed 但是最好可以scroll一下
+        # "webarena.798", 
     ]
 
     # 初始化空的实验参数列表
