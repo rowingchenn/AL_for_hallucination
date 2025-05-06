@@ -175,3 +175,5 @@ src/agentlab/agents/test_results/
 src/agentlab/agents/test_results_webarena_unexpected_transition/
 
 src/agentlab/agents/webarena
+
+hallucination_traj_sample/Webarena_error&repetitive_transition/

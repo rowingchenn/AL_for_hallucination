@@ -185,17 +185,13 @@ def find_env_errors(trajectories_dir, output_file=None, move_to_dir=None, error_
 
 if __name__ == "__main__":
     # 设置轨迹目录路径
-    trajectories_dir = (
-        "/home/weichenzhang/hallucination/AL_for_hallucination/src/agentlab/agents/test_results"
-    )
+    trajectories_dir = "/home/weichenzhang/hallucination/AL_for_hallucination/hallucination_traj_sample/Webarena_error&repetitive_transition"
 
     # 设置输出文件路径
     output_file = os.path.join(trajectories_dir, "env_errors_analysis.json")
 
     # 设置移动目标目录
-    move_to_dir = (
-        "/home/weichenzhang/hallucination/AL_for_hallucination/hallucination_traj_sample/WorkArena"
-    )
+    move_to_dir = trajectories_dir
 
     # 错误映射文件路径
     error_map_file = os.path.join(trajectories_dir, "error_transition_truncate_map.json")
