@@ -208,7 +208,7 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
 
     # 构造输出文件名：<风险类型>_<目录名>.json
     risk_keywords = [
-        "unreachable", "misleading", "ambiguity", "missinginfo", "human_in_loop", "unexpected_transition"
+        "unreachable", "misleading", "ambiguity", "missinginfo", "human_in_loop"
     ]
     risk_type = next((kw for kw in risk_keywords if kw in exp_dir_name), None)
 

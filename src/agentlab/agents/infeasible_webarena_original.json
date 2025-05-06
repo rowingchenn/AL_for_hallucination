@@ -1,0 +1,1058 @@
+[
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 22,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082/fujifilm-finepix-z200fd-10mp-digital-camera-with-5x-optical-dual-image-stabilized-zoom-black.html",
+    "geolocation": null,
+    "intent_template": "List out reviewers, if exist, who mention about {{description}}",
+    "instantiation_dict": {
+      "description": "under water photo"
+    },
+    "intent": "List out reviewers, if exist, who mention about under water photo",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no review about under water photo",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 222
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 24,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082/haflinger-men-s-wool-felt-open-back-slippers-beige-550-peat-us-7.html",
+    "geolocation": null,
+    "intent_template": "List out reviewers, if exist, who mention about {{description}}",
+    "instantiation_dict": {
+      "description": "price being unfair"
+    },
+    "intent": "List out reviewers, if exist, who mention about price being unfair",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no reivew about price being unfair",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 222
+  },
+  {
+    "sites": [
+      "map"
+    ],
+    "task_id": 101,
+    "require_login": true,
+    "storage_state": null,
+    "start_url": "http://111.229.174.217:1443",
+    "geolocation": null,
+    "intent_template": "Where is the nearest {{places}} to {{start}}, and what is the walking distance to it?",
+    "instantiation_dict": {
+      "places": "In-N-Out",
+      "start": "Upitts"
+    },
+    "intent": "Where is the nearest In-N-Out to Upitts, and what is the walking distance to it?",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no In-N-Out near University of Pittsburgh",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 66
+  },
+  {
+    "sites": [
+      "shopping_admin"
+    ],
+    "task_id": 115,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_admin_state.json",
+    "start_url": "http://111.229.174.217:18083/admin",
+    "geolocation": null,
+    "intent_template": "Show me the name of the customers who have expressed dissatisfaction with {{product}}",
+    "instantiation_dict": {
+      "product": "Chloe tank"
+    },
+    "intent": "Show me the name of the customers who have expressed dissatisfaction with Chloe tank",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no negative review for Chloe tank",
+      "reference_answer_raw_annotation": ""
+    },
+    "intent_template_id": 245
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 166,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082/sensodyne-repair-protect-whitening-toothpaste-with-fluoride-3-4-oz-pack-of-3.html",
+    "geolocation": null,
+    "intent_template": "What are the main criticisms of this product? Please extract the relevant sentences.",
+    "instantiation_dict": {},
+    "intent": "What are the main criticisms of this product? Please extract the relevant sentences.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "there is no existing criticism",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 136
+  },
+  {
+    "sites": [
+      "gitlab"
+    ],
+    "task_id": 168,
+    "require_login": true,
+    "storage_state": "./.auth/gitlab_state.json",
+    "start_url": "http://111.229.174.217:19001",
+    "geolocation": null,
+    "intent_template": "Tell me the full names of the repositories where I made contributions and they got {{description}} stars?",
+    "instantiation_dict": {
+      "description": "more than 100"
+    },
+    "intent": "Tell me the full names of the repositories where I made contributions and they got more than 100 stars?",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "No repo found",
+      "reference_answer_raw_annotation": "No repo found"
+    },
+    "intent_template_id": 289
+  },
+  {
+    "sites": [
+      "shopping_admin"
+    ],
+    "task_id": 183,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_admin_state.json",
+    "start_url": "http://111.229.174.217:18083/admin",
+    "geolocation": null,
+    "intent_template": "Give me the {{Attribute}} of the products that have {{N}} units left",
+    "instantiation_dict": {
+      "Attribute": "SKU",
+      "N": "10"
+    },
+    "intent": "Give me the SKU of the products that have 10 units left",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no product that has 10 quantities left.",
+      "reference_answer_raw_annotation": "There is no product that has 10 quantities left."
+    },
+    "intent_template_id": 368
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 191,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Tell me the total cost of my latest {{status}} order?",
+    "instantiation_dict": {
+      "status": "processing"
+    },
+    "intent": "Tell me the total cost of my latest processing order?",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no order of \"processing\" status",
+      "reference_answer_raw_annotation": "There is no order of \"processing\" status"
+    },
+    "intent_template_id": 214
+  },
+  {
+    "sites": [
+      "shopping_admin"
+    ],
+    "task_id": 201,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_admin_state.json",
+    "start_url": "http://111.229.174.217:18083/admin",
+    "geolocation": null,
+    "intent_template": "Get the {{attribute}} of the {{status}} order",
+    "instantiation_dict": {
+      "attribute": "customer name",
+      "status": "earliest fraud suspect"
+    },
+    "intent": "Get the customer name of the earliest fraud suspect order",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no order of \"fraud suspect\" status",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 366
+  },
+  {
+    "sites": [
+      "map"
+    ],
+    "task_id": 218,
+    "require_login": true,
+    "storage_state": null,
+    "start_url": "http://111.229.174.217:1443",
+    "geolocation": null,
+    "intent_template": "Show me the walking distance from nearby hotels to {{location}} that take at most {{n}} minutes?",
+    "instantiation_dict": {
+      "location": "CMU, Pittsburgh",
+      "n": "5"
+    },
+    "intent": "Show me the walking distance from nearby hotels to CMU, Pittsburgh that take at most 5 minutes?",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no hotel near CMU that is within 5 minutes walking distance",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 41
+  },
+  {
+    "sites": [
+      "map"
+    ],
+    "task_id": 219,
+    "require_login": true,
+    "storage_state": null,
+    "start_url": "http://111.229.174.217:1443",
+    "geolocation": null,
+    "intent_template": "Show me the walking distance from nearby hotels to {{location}} that take at most {{n}} minutes?",
+    "instantiation_dict": {
+      "location": "Pittsburgh airport",
+      "n": "3"
+    },
+    "intent": "Show me the walking distance from nearby hotels to Pittsburgh airport that take at most 3 minutes?",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no hotel near CMU that is within 5 minutes walking distance",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 41
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 225,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "What do customers say about {{product_type}} from {{manufature}}",
+    "instantiation_dict": {
+      "product_type": "brush",
+      "manufature": "sephora"
+    },
+    "intent": "What do customers say about brush from sephora",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "The sephora brushes don't have reviews",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 135
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 234,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Get the order number of my most recent {{status}} order ",
+    "instantiation_dict": {
+      "status": "on hold"
+    },
+    "intent": "Get the order number of my most recent on hold order ",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "there is no on hold order",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 213
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 235,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Get the order number of my most recent {{status}} order ",
+    "instantiation_dict": {
+      "status": "under delivery"
+    },
+    "intent": "Get the order number of my most recent under delivery order ",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no under delivery order",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 213
+  },
+  {
+    "sites": [
+      "shopping_admin"
+    ],
+    "task_id": 247,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_admin_state.json",
+    "start_url": "http://111.229.174.217:18083/admin",
+    "geolocation": null,
+    "intent_template": "Show me the {{information}} of the customer who is the most unhappy with {{product}}",
+    "instantiation_dict": {
+      "information": "email address",
+      "product": "the style of Zoe products"
+    },
+    "intent": "Show me the email address of the customer who is the most unhappy with the style of Zoe products",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "Valorie doesn't have a email in the system",
+      "program_html": [],
+      "string_note": "There is no negative review for Zoe products",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 244
+  },
+  {
+    "sites": [
+      "map"
+    ],
+    "task_id": 253,
+    "require_login": true,
+    "storage_state": null,
+    "start_url": "http://111.229.174.217:1443",
+    "geolocation": null,
+    "intent_template": "What is the {{information}} of {{location}}",
+    "instantiation_dict": {
+      "location": "Carnegie Mellon Café",
+      "information": "phone number"
+    },
+    "intent": "What is the phone number of Carnegie Mellon Café",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no such information in the map",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 501
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 301,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Show the most recent {{status}} order",
+    "instantiation_dict": {
+      "status": "processing"
+    },
+    "intent": "Show the most recent processing order",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "there is no order in processing"
+    },
+    "intent_template_id": 180
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 302,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Show the most recent {{status}} order",
+    "instantiation_dict": {
+      "status": "out of delivery"
+    },
+    "intent": "Show the most recent out of delivery order",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "there is no order in processing"
+    },
+    "intent_template_id": 180
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 313,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Which number to call for the customer service?",
+    "instantiation_dict": {},
+    "intent": "Which number to call for the customer service?",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no phone number in the website",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 134
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 368,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "find discounted items.",
+    "instantiation_dict": {},
+    "intent": "find discounted items.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no function to show only discount items",
+      "reference_answer_raw_annotation": "There is no function to show only discount items."
+    },
+    "intent_template_id": 188
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 376,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Summarize customer reviews for {{product}}.",
+    "instantiation_dict": {
+      "product": "Amazon Echo Dot 3rd generation"
+    },
+    "intent": "Summarize customer reviews for Amazon Echo Dot 3rd generation.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no review for this product",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 182
+  },
+  {
+    "sites": [
+      "map"
+    ],
+    "task_id": 382,
+    "require_login": true,
+    "storage_state": null,
+    "start_url": "http://111.229.174.217:1443",
+    "geolocation": null,
+    "intent_template": "I am arriving at Carnegie Mellon University. Find the nearby US Citizenship and Immigration Services and the walking distance to the nearest Social Security Administration from US Citizenship and Immigration Services",
+    "instantiation_dict": {},
+    "intent": "I am arriving at Carnegie Mellon University. Find the nearby US Citizenship and Immigration Services and the walking distance to the nearest Social Security Administration from US Citizenship and Immigration Services",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There is no USCIS nearby",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 781
+  },
+  {
+    "sites": [
+      "shopping_admin"
+    ],
+    "task_id": 491,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_admin_state.json",
+    "start_url": "http://111.229.174.217:18083/admin",
+    "geolocation": null,
+    "intent_template": "Notify {{name}} in their most recent pending order with message \"{{message}}\"",
+    "instantiation_dict": {
+      "name": "Sarah Miller",
+      "message": "the order is ready to be shipped soon!"
+    },
+    "intent": "Notify Sarah Miller in their most recent pending order with message \"the order is ready to be shipped soon!\"",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "System message: We cannot add order history."
+    },
+    "intent_template_id": 280
+  },
+  {
+    "sites": [
+      "reddit"
+    ],
+    "task_id": 723,
+    "require_login": true,
+    "storage_state": "./.auth/reddit_state.json",
+    "start_url": "http://111.229.174.217:18080",
+    "geolocation": null,
+    "intent_template": "Like all submissions created by {{user}} in subreddit {{subreddit}}",
+    "instantiation_dict": {
+      "user": "FTorrez81",
+      "subreddit": "iphone13"
+    },
+    "intent": "Like all submissions created by FTorrez81 in subreddit iphone13",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "reference_answer_raw_annotation": "N/A",
+      "string_note": "FTorrez81 does not have any submissions in iphone13"
+    },
+    "intent_template_id": 25,
+    "string_note": "FTorrez81 has no submissions in subreddit iphone13"
+  },
+  {
+    "sites": [
+      "reddit"
+    ],
+    "task_id": 726,
+    "require_login": true,
+    "storage_state": "./.auth/reddit_state.json",
+    "start_url": "http://111.229.174.217:18080",
+    "geolocation": null,
+    "intent_template": "DisLike all submissions created by {{user}} in subreddit {{subreddit}}",
+    "instantiation_dict": {
+      "subreddit": "earthporn",
+      "user": "jacyanthis"
+    },
+    "intent": "DisLike all submissions created by jacyanthis in subreddit earthporn",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "jacyanthis does not have any submissions in earthporn",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 1510
+  },
+  {
+    "sites": [
+      "gitlab"
+    ],
+    "task_id": 783,
+    "require_login": true,
+    "storage_state": "./.auth/gitlab_state.json",
+    "start_url": "http://111.229.174.217:19001",
+    "geolocation": null,
+    "intent_template": "Add the following users to repo {{repo}} as {{role}}: {{user_list}}",
+    "instantiation_dict": {
+      "repo": "kkroening/ffmpeg-python",
+      "role": "maintainer",
+      "user_list": [
+        "yjlou",
+        "a11yproject"
+      ]
+    },
+    "intent": "Add the following users to repo kkroening/ffmpeg-python as maintainer: ['yjlou', 'a11yproject']",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "not the owner of the repo so cannot add maintainer",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 351
+  },
+  {
+    "sites": [
+      "gitlab"
+    ],
+    "task_id": 789,
+    "require_login": true,
+    "storage_state": "./.auth/gitlab_state.json",
+    "start_url": "http://111.229.174.217:19001",
+    "geolocation": null,
+    "intent_template": "Create an issue {{issue}} in {{repo}}.",
+    "instantiation_dict": {
+      "repo": "huggingface dataset",
+      "issue": "asking about do they have any plan on supporting Webagent in the next quater"
+    },
+    "intent": "Create an issue asking about do they have any plan on supporting Webagent in the next quater in huggingface dataset.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "huggingface repo does not exist",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 328
+  },
+  {
+    "sites": [
+      "shopping_admin"
+    ],
+    "task_id": 790,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_admin_state.json",
+    "start_url": "http://111.229.174.217:18083/admin",
+    "geolocation": null,
+    "intent_template": "Delete all {{review_type}}",
+    "instantiation_dict": {
+      "review_type": "negative reviews for Sybil running short"
+    },
+    "intent": "Delete all negative reviews for Sybil running short",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "No negative reviews for sybil running short",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 246
+  },
+  {
+    "sites": [
+      "gitlab",
+      "reddit"
+    ],
+    "task_id": 791,
+    "require_login": true,
+    "storage_state": "./.auth/gitlab.reddit_state.json",
+    "start_url": "http://111.229.174.217:19001",
+    "geolocation": null,
+    "intent_template": "Make a folder named {{directory}} on the {{gitlab_repo}} repo and include a file called urls.txt that consists of the links to the 5 most recent posts from {{subreddit}}.",
+    "instantiation_dict": {
+      "directory": "car",
+      "subreddit": "cars",
+      "gitlab_repo": "gimmiethat.space"
+    },
+    "intent": "Make a folder named car on the gimmiethat.space repo and include a file called urls.txt that consists of the links to the 5 most recent posts from cars.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "the subreddit does not exist",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 84
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 792,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Buy the highest rated product from the {{product_category}} category within a budget {{dollar_value}}.",
+    "instantiation_dict": {
+      "product_category": "Beauty & Personal Care",
+      "dollar_value": "under 20"
+    },
+    "intent": "Buy the highest rated product from the Beauty & Personal Care category within a budget under 20.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "The website does not support sorting by rating and there are too many products in this category",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 172
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 793,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Buy the highest rated product from the {{product_category}} category within a budget {{dollar_value}}.",
+    "instantiation_dict": {
+      "product_category": "Men clothing",
+      "dollar_value": "above 50 but under 129.99"
+    },
+    "intent": "Buy the highest rated product from the Men clothing category within a budget above 50 but under 129.99.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "The website does not support sorting by rating and there are too many products in this category",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 172
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 794,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Change the delivery address for my most recent order to {{address}}.",
+    "instantiation_dict": {
+      "address": "4000 Forbes Ave, Pittsburgh, PA"
+    },
+    "intent": "Change the delivery address for my most recent order to 4000 Forbes Ave, Pittsburgh, PA.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "The shipping address cannot be changed after an order is placed in the website.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 191
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 795,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Change the delivery address for my most recent order to {{address}}.",
+    "instantiation_dict": {
+      "address": "6726 McPherson Blvd, Pittsburgh, PA"
+    },
+    "intent": "Change the delivery address for my most recent order to 6726 McPherson Blvd, Pittsburgh, PA.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "The shipping address cannot be changed after an order is placed in the website.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 191
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 796,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Change the delivery address for my most recent order to {{address}}.",
+    "instantiation_dict": {
+      "address": "155 5th Street, San Francisco, CA"
+    },
+    "intent": "Change the delivery address for my most recent order to 155 5th Street, San Francisco, CA.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "The shipping address cannot be changed after an order is placed in the website.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 191
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 797,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Change the delivery address for my most recent order to {{address}}.",
+    "instantiation_dict": {
+      "address": "3 Oxford St, Cambridge, MA"
+    },
+    "intent": "Change the delivery address for my most recent order to 3 Oxford St, Cambridge, MA.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "The shipping address cannot be changed after an order is placed in the website.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 191
+  },
+  {
+    "sites": [
+      "shopping"
+    ],
+    "task_id": 798,
+    "require_login": true,
+    "storage_state": "./.auth/shopping_state.json",
+    "start_url": "http://111.229.174.217:18082",
+    "geolocation": null,
+    "intent_template": "Change the delivery address for my most recent order to {{address}}.",
+    "instantiation_dict": {
+      "address": "77 Massachusetts Ave, Cambridge, MA"
+    },
+    "intent": "Change the delivery address for my most recent order to 77 Massachusetts Ave, Cambridge, MA.",
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "The shipping address cannot be changed after an order is placed in the website.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "intent_template_id": 191
+  }
+]

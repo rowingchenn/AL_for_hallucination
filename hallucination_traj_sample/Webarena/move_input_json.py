@@ -9,8 +9,8 @@ DEST_ROOT = "/Users/pujiayue/Documents/research/llm agent hallucination/llm_agen
 
 # 风险类型关键词列表（已加入 misleading）
 RISK_TYPES = [
-    "ambiguity", "human_in_loop", "TBD", "missinginfo",
-    "unreachable", "unexpected_transition", "misleading"
+    "ambiguity", "human_in_loop", "missinginfo",
+    "unreachable", "misleading"
 ]
 
 def find_risk_type(filename):
