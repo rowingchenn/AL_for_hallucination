@@ -240,13 +240,13 @@ def find_repetitive_actions(trajectories_dir, output_file=None, move_to_dir=None
 
 if __name__ == "__main__":
     # 设置轨迹目录路径
-    trajectories_dir = "/home/weichenzhang/hallucination/AL_for_hallucination/src/agentlab/agents/test_results/error_transition"
+    trajectories_dir = "/home/weichenzhang/hallucination/AL_for_hallucination/hallucination_traj_sample/Webarena_error&repetitive_transition"
 
     # 设置输出文件路径
     output_file = os.path.join(trajectories_dir, "repetition_analysis.json")
 
     # 设置移动目标目录
-    move_to_dir = "/home/weichenzhang/hallucination/AL_for_hallucination/hallucination_traj_sample/Webarena_error&repetitive_transition"
+    move_to_dir = trajectories_dir
 
     # 设置映射输出目录
     map_dir = os.path.join(trajectories_dir, "repetition_maps")
