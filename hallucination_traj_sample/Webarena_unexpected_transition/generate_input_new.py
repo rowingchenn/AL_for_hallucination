@@ -240,6 +240,8 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
         step_num = steps_data
         return generate_info_json_for_step(exp_dir, exp_args, options, step_num)
 '''
+
+
 def generate_info_json(exp_dir, exp_args, options, truncate_map):
     info = extract_info_from_exp_args(exp_args)
     if not info:
@@ -265,7 +267,12 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
 
     # 构造输出文件名：<风险类型>_<目录名>.json
     risk_keywords = [
-        "unreachable", "misleading", "ambiguity", "missinginfo", "human_in_loop", "unachievable_original"
+        "unreachable",
+        "misleading",
+        "ambiguity",
+        "missinginfo",
+        "human_in_loop",
+        "unachievable_original",
     ]
     risk_type = next((kw for kw in risk_keywords if kw in exp_dir_name), None)
 
@@ -297,6 +304,7 @@ def generate_info_json(exp_dir, exp_args, options, truncate_map):
         except Exception as e2:
             print(f"保存简化版info.json时也出错: {e2}")
             return False
+
 
 def load_result_summary(exp_dir):
     """尝试加载实验结果摘要"""
