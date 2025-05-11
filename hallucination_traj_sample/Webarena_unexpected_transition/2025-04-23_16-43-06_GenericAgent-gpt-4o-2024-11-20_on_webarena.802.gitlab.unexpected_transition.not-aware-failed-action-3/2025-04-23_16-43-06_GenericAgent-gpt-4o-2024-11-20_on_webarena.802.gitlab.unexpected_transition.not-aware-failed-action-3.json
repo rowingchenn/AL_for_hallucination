@@ -14,8 +14,8 @@
         "use_screenshot": false,
         "use_som": false
     },
-    "goal": "({'type': 'text', 'text': 'create a new group \"d-lab\" with two members: patou and john. You need to invite them one by one.'},)",
     "input_step": 12,
+    "goal": "({'type': 'text', 'text': 'create a new group \"d-lab\" with two members: patou and john. You need to invite them one by one.'},)",
     "input": [
         {
             "role": "system",
@@ -39,6 +39,10 @@
                 {
                     "type": "text",
                     "text": "\n# Concrete Example\n\nHere is a concrete example of how to format your answer.\nMake sure to follow the template with proper tags:\n\n<think>\nFrom previous action I tried to set the value of year to \"2022\",\nusing select_option, but it doesn't appear to be in the form. It may be a\ndynamic dropdown, I will try using click with the bid \"a324\" and look at the\nresponse from the page.\n</think>\n\n<action>\nclick('a324')\n</action>\n"
+                },
+                {
+                    "type": "text",
+                    "text": "\n# History of interaction with the task:\n\n## step 12\n\n<think>\nThe role for \"patou\" has already been set to \"Developer,\" as indicated in the AXTree. Now, I need to proceed by clicking the \"Invite\" button (bid='680') to send the invitation for \"patou.\" After successfully inviting \"patou,\" I will repeat the process to invite \"john.\"\n</think>\n\n<action>\nclick('680')\n</action>"
                 }
             ]
         }
