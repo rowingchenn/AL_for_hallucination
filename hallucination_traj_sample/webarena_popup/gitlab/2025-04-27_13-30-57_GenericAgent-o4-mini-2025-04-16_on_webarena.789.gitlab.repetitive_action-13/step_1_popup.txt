@@ -1,0 +1,21 @@
+[2] dialog 'GitLab 15.0 Update Available', visible, modal=True, describedby='gitlab-update-modal_body'
+    [3] banner '', visible
+        [4] heading 'GitLab 15.0 Update Available', visible
+        [5] button 'Close', visible
+    [6] paragraph '', visible
+        StaticText 'We’ve released GitLab 15.0 with exciting new features!'
+    [7] group '', visible
+        [8] LabelText '', visible
+            StaticText 'Highlights'
+        [9] list '', visible
+            [10] listitem '', visible
+                StaticText 'Easily create issues to ask about Webagent support in Hugging Face datasets.'
+            [11] listitem '', visible
+                StaticText 'Streamlined project dashboard for quick insights.'
+            [12] listitem '', visible
+                StaticText 'Improved CI/CD performance and caching.'
+    [13] contentinfo '', visible
+        [14] button 'Remind me later', visible
+            StaticText 'Remind me later'
+        [15] button 'Update now', visible
+            StaticText 'Update now'

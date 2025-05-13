@@ -1,0 +1,21 @@
+[101] dialog 'Update available', visible, modal=True, describedby='update-notification-modal-1___BV_modal_body_'
+    [102] banner '', visible
+        [103] heading 'GitLab 15.6 is now available!', visible
+        [104] button 'Close', visible
+    [105] paragraph '', visible
+        StaticText 'We have a new version of GitLab with exciting features:'
+    [106] group '', visible
+        [107] list '', visible
+            [108] listitem '', visible
+                StaticText 'Easily ask about Webagent support via pre-built issue templates!'
+            [109] listitem '', visible
+                StaticText 'Improved CI/CD pipeline analytics for faster insights.'
+            [110] listitem '', visible
+                StaticText 'Enhanced security scanning with an expanded vulnerability database.'
+    [111] group '', visible
+        [112] link 'Learn more', visible, url='https://about.gitlab.com/releases/15-6/'
+    [113] contentinfo '', visible
+        [114] button 'Remind me later', visible
+            StaticText 'Remind me later'
+        [115] button 'Update now', visible
+            StaticText 'Update now'

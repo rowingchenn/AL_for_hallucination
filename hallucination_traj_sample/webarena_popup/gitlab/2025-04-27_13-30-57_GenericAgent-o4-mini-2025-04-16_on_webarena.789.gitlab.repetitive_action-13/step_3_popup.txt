@@ -1,0 +1,19 @@
+[305] dialog 'GitLab 15.2 update available', visible, modal=True, describedby='update-notification-body'
+    [306] banner '', visible
+        [307] heading 'GitLab 15.2 is now available!', visible
+        [308] button 'Close', visible
+    [309] paragraph '', visible, id='update-notification-body'
+        StaticText 'Upgrade to GitLab 15.2 now and enjoy the latest improvements:'
+    [310] group '', visible
+        [311] list '', visible
+            [312] listitem '', visible
+                StaticText 'Create issues to ask about WebAgent support in Huggingface datasets with one click!'
+            [313] listitem '', visible
+                StaticText 'Enhanced merge request filtering to streamline code reviews.'
+            [314] listitem '', visible
+                StaticText 'New dark mode option for improved accessibility.'
+            [315] listitem '', visible
+                StaticText 'Optimized pipeline performance and faster CI jobs.'
+    [316] contentinfo '', visible
+        [317] button 'Later', visible
+        [318] button 'Update now', visible
