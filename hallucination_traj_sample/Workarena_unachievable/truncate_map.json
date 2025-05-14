@@ -1,0 +1,54 @@
+{
+    "2025-05-08_15-17-15_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-incident-list-with-reason-l2_9": , # 不理想
+    "2025-05-08_12-15-42_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-development-laptop-p-c-with-reason-l2_9": 58,
+    "2025-05-08_07-52-16_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-change-request-with-reason-l2_9": 31, # 30步不够
+    "2025-05-08_17-22-56_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-user-list-with-reason-l2_9": 6,
+    "2025-05-08_09-22-07_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-change-request-l2_9": 31, # 不理想且30步不够
+    "2025-05-08_13-28-30_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-ipad-pro-l2_9": 62,
+    "2025-05-08_17-05-04_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-asset-list-with-reason-l2_9": 17, # 不理想
+    "2025-05-08_18-52-34_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-incident-list-l2_9": 16,
+    "2025-05-08_14-18-21_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-development-laptop-p-c-l2_9": [14, 18],
+    "2025-05-08_14-44-28_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-asset-list-with-reason-l2_9": 66,
+    "2025-05-08_09-06-27_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-incident-l2_9": 23,
+    "2025-05-08_18-00-46_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-hardware-list-with-reason-l2_9": [16, 21],
+    "2025-05-08_16-28-54_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-incident-list-l2_9": 15,
+    "2025-05-08_13-02-39_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-sales-laptop-l2_9": [8, 15],
+    "2025-05-08_10-17-31_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-standard-laptop-with-reason-l2_9": [7, 21],
+    "2025-05-08_18-17-09_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-service-catalog-item-list-with-reason-l2_9": [18, 27],
+    "2025-05-08_10-36-11_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-sales-laptop-with-reason-l2_9": 66,
+    "2025-05-08_13-48-53_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-apple-watch-l2_9": [4, 13, 15],
+    "2025-05-08_14-05-34_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-apple-mac-book-pro15-l2_9": [11, 13],
+    "2025-05-08_13-40-54_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-ipad-mini-l2_9": [9, 14],
+    "2025-05-08_17-27-15_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-incident-list-with-reason-l2_9": 10,
+    "2025-05-08_08-09-45_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-problem-with-reason-l2_9": [18, 25],
+    "2025-05-08_09-39-45_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-problem-l2_9": 24,
+    "2025-05-08_13-14-00_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-developer-laptop-l2_9": 19, # 不理想
+    "2025-05-08_16-01-12_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-asset-list-l2_9": , # 完全不理想
+    "2025-05-08_07-31-54_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-incident-with-reason-l2_9": [25, 29],
+    "2025-05-08_15-38-33_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-change-request-list-with-reason-l2_9": 22,
+    "2025-05-08_11-10-13_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-ipad-pro-with-reason-l2_9": 66,
+    "2025-05-08_19-26-41_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-service-catalog-item-list-l2_9": 8,
+    "2025-05-08_15-47-01_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-with-reason-l2_9": 66,
+    "2025-05-08_07-17-23_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-user-with-reason-l2_9": [9, 13],
+    "2025-05-08_08-52-47_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-user-l2_9": [19, 24],
+    "2025-05-08_17-42-24_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-change-request-list-with-reason-l2_9": 8,
+    "2025-05-08_08-34-40_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-hardware-asset-with-reason-l2_9": 31, # 30步不够
+    "2025-05-08_16-46-57_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-change-request-list-l2_9": 18,
+    "2025-05-08_16-56-58_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-hardware-list-l2_9": 5,
+    "2025-05-08_19-11-22_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-hardware-list-l2_9": [14, 15],
+    "2025-05-08_18-33-08_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-asset-list-l2_9": [11, 29],
+    "2025-05-08_09-54-42_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-create-hardware-asset-l2_9": 31, # 30步不够
+    "2025-05-08_18-47-06_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-user-list-l2_9": 8,
+    "2025-05-08_12-01-23_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-apple-mac-book-pro15-with-reason-l2_9": 66,
+    "2025-05-08_16-24-18_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-user-list-l2_9": 4, # 完全不理想
+    "2025-05-08_17-00-05_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-service-catalog-item-list-l2_9": 9, # 完全不可用
+    "2025-05-08_15-42-57_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-hardware-list-with-reason-l2_9": 24,
+    "2025-05-08_12-47-51_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-standard-laptop-l2_9": 64,
+    "2025-05-08_19-03-37_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-sort-change-request-list-l2_9": 11,
+    "2025-05-08_14-31-22_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-loaner-laptop-l2_9": 22,
+    "2025-05-08_10-52-48_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-developer-laptop-with-reason-l2_9": 66,
+    "2025-05-08_12-33-41_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-loaner-laptop-with-reason-l2_9": 66,
+    "2025-05-08_15-02-16_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-filter-user-list-with-reason-l2_9": 66,
+    "2025-05-08_11-32-51_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-ipad-mini-with-reason-l2_9": 60,
+    "2025-05-08_11-47-25_GenericAgent-o4-mini-2025-04-16_on_workarena.servicenow.infeasible-navigate-and-order-apple-watch-with-reason-l2_9": 66
+}
